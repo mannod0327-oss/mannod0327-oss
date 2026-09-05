@@ -1,0 +1,18 @@
+{
+  "name": "ecc-marketplace",
+  "owner": {
+    "name": "ECC"
+  },
+  "description": "ECC engineering standards as installable Claude Code plugins.",
+  "plugins": [
+    {
+      "name": "ecc",
+      "source": "./plugins/ecc",
+      "description": "ECC intake, review, release, and reporting workflow with company policy guardrails.",
+      "version": "0.1.0",
+      "author": {
+        "name": "ECC"
+      }
+    }
+  ]
+}

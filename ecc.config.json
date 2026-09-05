@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "company": {
+    "short_name": "ECC",
+    "legal_name": "",
+    "kind": "AI / software product company",
+    "primary_contact": "",
+    "security_contact": ""
+  },
+  "stack": {
+    "primary": ["python", "typescript"],
+    "also_produces": ["documents"],
+    "python": {
+      "min_version": "3.12",
+      "test_command": "python -m pytest -q",
+      "pin_style": "exact"
+    },
+    "typescript": {
+      "package_manager": "npm",
+      "test_command": "npm test",
+      "lockfile_committed": true
+    }
+  },
+  "policy": {
+    "secrets_in_repo": "forbidden",
+    "high_impact_actions": "human_approval_required",
+    "client_data_egress": "authorized_only",
+    "completion_claims": "evidence_required"
+  }
+}
