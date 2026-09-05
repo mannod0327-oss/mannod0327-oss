@@ -73,8 +73,9 @@ def check_config(errors: list[str]) -> None:
     company = config.get("company", {})
     if company.get("short_name") != "ECC":
         errors.append("ecc.config.json: company.short_name must be 'ECC'")
-    if not company.get("legal_name", "").strip():
-        errors.append("ecc.config.json: company.legal_name must not be empty")
+    for key in ("legal_name", "primary_contact", "security_contact"):
+        if not company.get(key, "").strip():
+            errors.append(f"ecc.config.json: company.{key} must not be empty")
     for key in ("secrets_in_repo", "high_impact_actions", "client_data_egress", "completion_claims"):
         if key not in config.get("policy", {}):
             errors.append(f"ecc.config.json: policy.{key} is not set")

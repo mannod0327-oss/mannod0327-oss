@@ -87,21 +87,24 @@ def test_detects_crlf(repo: Path) -> None:
     assert "CRLF" in result.stderr
 
 
-def test_detects_blank_legal_name(repo: Path) -> None:
+@pytest.mark.parametrize("field", ["legal_name", "primary_contact", "security_contact"])
+def test_detects_blank_company_field(repo: Path, field: str) -> None:
     path = repo / "ecc.config.json"
     config = json.loads(path.read_text(encoding="utf-8"))
-    config["company"]["legal_name"] = "   "
+    config["company"][field] = "   "
     path.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
 
     result = run_validator(repo)
     assert result.returncode == 1
-    assert "legal_name" in result.stderr
+    assert field in result.stderr
 
 
 def test_config_carries_the_company_name() -> None:
     config = json.loads((ROOT / "ecc.config.json").read_text(encoding="utf-8"))
     assert config["company"]["short_name"] == "ECC"
     assert config["company"]["legal_name"] == "Elite Coding Company"
+    assert config["company"]["primary_contact"].startswith("https://")
+    assert config["company"]["security_contact"].startswith("https://")
 
 
 def test_detects_unset_policy(repo: Path) -> None:

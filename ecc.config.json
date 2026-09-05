@@ -4,8 +4,8 @@
     "short_name": "ECC",
     "legal_name": "Elite Coding Company",
     "kind": "AI / software product company",
-    "primary_contact": "",
-    "security_contact": ""
+    "primary_contact": "https://github.com/mannod0327-oss/mannod0327-oss/issues",
+    "security_contact": "https://github.com/mannod0327-oss/mannod0327-oss/security/advisories/new"
   },
   "stack": {
     "primary": [
