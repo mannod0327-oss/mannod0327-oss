@@ -70,8 +70,11 @@ def check_manifests(errors: list[str]) -> None:
 
 def check_config(errors: list[str]) -> None:
     config = json.loads((ROOT / "ecc.config.json").read_text(encoding="utf-8"))
-    if config.get("company", {}).get("short_name") != "ECC":
+    company = config.get("company", {})
+    if company.get("short_name") != "ECC":
         errors.append("ecc.config.json: company.short_name must be 'ECC'")
+    if not company.get("legal_name", "").strip():
+        errors.append("ecc.config.json: company.legal_name must not be empty")
     for key in ("secrets_in_repo", "high_impact_actions", "client_data_egress", "completion_claims"):
         if key not in config.get("policy", {}):
             errors.append(f"ecc.config.json: policy.{key} is not set")

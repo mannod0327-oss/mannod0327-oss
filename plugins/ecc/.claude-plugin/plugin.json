@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "description": "ECC engineering workflow: scoped intake, standards review, verified release, and evidence-backed reporting.",
   "author": {
-    "name": "ECC"
+    "name": "Elite Coding Company"
   },
   "license": "MIT",
-  "keywords": ["ecc", "workflow", "review", "release", "policy"]
+  "keywords": [
+    "ecc",
+    "workflow",
+    "review",
+    "release",
+    "policy"
+  ]
 }

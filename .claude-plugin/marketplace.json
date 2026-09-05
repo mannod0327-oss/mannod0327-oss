@@ -1,9 +1,9 @@
 {
   "name": "ecc-marketplace",
   "owner": {
-    "name": "ECC"
+    "name": "Elite Coding Company"
   },
-  "description": "ECC engineering standards as installable Claude Code plugins.",
+  "description": "Elite Coding Company engineering standards as installable Claude Code plugins.",
   "plugins": [
     {
       "name": "ecc",
@@ -11,7 +11,7 @@
       "description": "ECC intake, review, release, and reporting workflow with company policy guardrails.",
       "version": "0.1.0",
       "author": {
-        "name": "ECC"
+        "name": "Elite Coding Company"
       }
     }
   ]

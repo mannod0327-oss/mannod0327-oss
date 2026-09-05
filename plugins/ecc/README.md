@@ -1,6 +1,6 @@
 # ECC plugin
 
-ECC's engineering standard as a Claude Code plugin: four commands, one skill,
+Elite Coding Company's engineering standard as a Claude Code plugin: four commands, one skill,
 and the company policy the agent may not waive.
 
 ## Install

@@ -2,14 +2,19 @@
   "schema_version": 1,
   "company": {
     "short_name": "ECC",
-    "legal_name": "",
+    "legal_name": "Elite Coding Company",
     "kind": "AI / software product company",
     "primary_contact": "",
     "security_contact": ""
   },
   "stack": {
-    "primary": ["python", "typescript"],
-    "also_produces": ["documents"],
+    "primary": [
+      "python",
+      "typescript"
+    ],
+    "also_produces": [
+      "documents"
+    ],
     "python": {
       "min_version": "3.12",
       "test_command": "python -m pytest -q",
