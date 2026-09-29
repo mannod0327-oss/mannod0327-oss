@@ -305,6 +305,43 @@ svg.i{width:20px;height:20px;flex:none}
 .weak li div{min-width:0}.weak b{display:block}.weak span{color:var(--muted);font-weight:700;font-size:14px}
 @media (max-width:420px){.sure{max-width:96px;font-size:13px;padding:6px 8px}.battle small{display:none}}
 
+/* word games */
+.mode.games svg{color:var(--tile)}
+@media (min-width:461px){.modes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:700px){.modes{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fz{display:inline-flex;align-items:center;gap:2px;margin-left:4px;font-style:normal;color:var(--lapis)}.fz svg{width:14px;height:14px;color:var(--lapis)}
+.page-h{font-size:clamp(30px,7vw,42px);margin:6px 0 4px}
+.ghub{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:14px}
+.gcard{display:grid;gap:6px;align-content:start;padding:18px;border-radius:22px;background:var(--surface);border:2px solid var(--line);border-bottom-width:6px;color:var(--ink);text-decoration:none;transition:transform .1s}
+.gcard:hover{transform:translateY(-3px)}.gcard b{font:600 22px var(--f-display)}.gcard>span:not(.gic){color:var(--muted);font-size:15px}.gcard small{font-weight:800;color:var(--lapis)}
+.gic{display:grid;place-items:center;width:56px;height:56px;border-radius:18px;color:#fff;background:var(--lapis)}.gic svg{width:30px;height:30px}
+.g-scramble .gic{background:var(--gold);color:#241900}.g-hidden .gic{background:var(--tile-deep)}.g-survival .gic{background:var(--pom)}
+.g-head{margin:4px 0 10px}.g-head h1{font-size:clamp(28px,6vw,38px)}.g-head p{margin:4px 0 0;color:var(--muted);font-weight:700}
+.g-stat{display:flex;flex-wrap:wrap;gap:8px 18px;font:600 15px var(--f-display);color:var(--muted);margin:0 0 12px}.g-stat b{color:var(--ink)}
+.lives{display:inline-flex;align-items:center;gap:4px;color:var(--ink)}.lives svg{color:var(--pom);width:18px;height:18px}
+.mem{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:460px){.mem{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.mcard{aspect-ratio:3/4;max-width:100%;padding:0;border:0;background:none;perspective:800px;cursor:pointer;font:inherit;color:inherit}
+.mc-in{position:relative;display:block;width:100%;height:100%;transition:transform .35s;transform-style:preserve-3d}
+.mcard.open .mc-in{transform:rotateY(180deg)}
+.mc-f,.mc-b{position:absolute;inset:0;display:grid;place-items:center;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:6px;text-align:center;overflow-wrap:anywhere}
+.mc-f{background:var(--lapis);color:var(--on-lapis);font:700 34px var(--f-display);box-shadow:inset 0 -6px 0 var(--lapis-deep)}
+.mc-b{transform:rotateY(180deg);background:var(--surface);border:2px solid var(--line);font:700 15px/1.2 var(--f-body)}.mc-b.en{font:600 18px var(--f-display);color:var(--lapis)}
+.mcard.done .mc-b{border-color:var(--ok);background:var(--ok-soft)}
+.clue{font:600 26px/1.25 var(--f-display);text-align:center;margin:6px 0 16px;color:var(--tile-deep)}
+.slots,.hidden-w{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:18px}
+.slot,.hl{display:grid;place-items:center;width:40px;height:48px;border-radius:10px;border:2px solid var(--line);border-bottom-width:4px;background:var(--surface);font:700 24px var(--f-display);text-transform:lowercase}
+.slot.fixed{background:var(--gold-soft);border-color:var(--gold)}.slots.ok .slot{border-color:var(--ok);background:var(--ok-soft)}
+.hl.on{border-color:var(--lapis)}.gap{width:18px}
+.letters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.ltr{width:48px;height:52px;border-radius:12px;border:2px solid var(--line);border-bottom-width:5px;background:var(--surface);font:700 24px var(--f-display);cursor:pointer}
+.ltr:disabled{opacity:.25;cursor:default}
+.kbd{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
+@media (max-width:460px){.kbd{grid-template-columns:repeat(7,minmax(0,1fr))}}
+.key{height:46px;border-radius:10px;border:2px solid var(--line);border-bottom-width:4px;background:var(--surface);font:700 20px var(--f-display);cursor:pointer;padding:0}
+.key.hit{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}.key.miss{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}.key:disabled{cursor:default}
+.g-ex{text-align:center;font-weight:700;margin:14px 0 0;padding:10px;border-radius:12px}.g-ex.ok{background:var(--ok-soft)}.g-ex.bad{background:var(--bad-soft)}.g-ex i{display:block;font-weight:600;color:var(--muted)}
+
 /* result and intro */
 .center{text-align:center}
 .center .mascot{justify-content:center;margin-top:16px}
@@ -395,6 +432,10 @@ const I={
  plane:svg('<path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>'),
  back:svg('<path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'),
  bulb:svg('<path fill="currentColor" d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/><path d="M9 20h6M10 23h4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>'),
+ snow:svg('<path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'),
+ cards:svg('<rect x="3" y="4" width="11" height="15" rx="2" fill="currentColor" opacity=".45"/><rect x="10" y="5" width="11" height="15" rx="2" fill="currentColor"/>'),
+ abc:svg('<path d="M3 18 6.5 6h1L11 18M4.3 14h5.4M13 6h4a3 3 0 0 1 0 6h-4zm0 6h4.5a3 3 0 0 1 0 6H13z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>'),
+ eye:svg('<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/>'),
  chat:svg('<path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M7 9h10M7 12h6" stroke="rgba(0,0,0,.35)" stroke-width="2" stroke-linecap="round"/>')
 };
 const DEV=`<svg class="dev-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M24 34 10 6l24 18zM76 34 90 6 66 24z" fill="var(--gold)" stroke="var(--m-line)" stroke-width="3" stroke-linejoin="round"/>
@@ -417,7 +458,7 @@ const mascot=(mood,text)=>`<div class="mascot ${mood||'idle'}">${STORK}${text?`<
 
 /* ---------- state ---------- */
 const KEY='destA2.v3';
-const FRESH=()=>({xp:0,days:{},crowns:{},boss:{},exam:{},mistakes:{},fixed:0,badges:{},blitz:0,daily:{},tests:{},errs:{},powers:{half:1,heal:0},scenes:{},sure:{n:0,ok:0},stats:{sessions:0,correct:0,answered:0,maxCombo:0,secs:0},goal:50,sound:true,theme:null,tasks:{}});
+const FRESH=()=>({xp:0,days:{},crowns:{},boss:{},exam:{},mistakes:{},fixed:0,badges:{},blitz:0,daily:{},tests:{},errs:{},powers:{half:1,heal:0},scenes:{},sure:{n:0,ok:0},games:{},freeze:0,goalDays:0,frozen:[],stats:{sessions:0,correct:0,answered:0,maxCombo:0,secs:0},goal:50,sound:true,theme:null,tasks:{}});
 let S=FRESH();
 function load(raw){const o=Object.assign(FRESH(),raw);o.stats=Object.assign(FRESH().stats,raw.stats||{});o.powers=Object.assign(FRESH().powers,raw.powers||{});o.sure=Object.assign(FRESH().sure,raw.sure||{});
  for(const k in o.mistakes)if(typeof o.mistakes[k]!=='object')o.mistakes[k]={b:0,d:dayKey()}; // older saves stored a counter
@@ -426,7 +467,12 @@ try{const raw=JSON.parse(localStorage.getItem(KEY));if(raw&&typeof raw==='object
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const todayXP=()=>S.days[dayKey()]||0;
 function streak(){const d=new Date();let n=0;if(!(dayKey(d) in S.days))d.setDate(d.getDate()-1);while(dayKey(d) in S.days){n++;d.setDate(d.getDate()-1)}return n}
-function addXP(g){const t=dayKey();S.xp+=g;S.days[t]=(S.days[t]||0)+g}
+function addXP(g){const t=dayKey(),before=S.days[t]||0;S.xp+=g;S.days[t]=before+g;
+ if(before<S.goal&&S.days[t]>=S.goal){S.goalDays++;if(S.goalDays%5===0&&S.freeze<2){S.freeze++;setTimeout(()=>toast(`${I.snow} Seriya muzlatgichi qo'lga kiritildi!`),900)}}} // 1 freeze per 5 days with the goal met
+/* A streak freeze fills missed days (up to the number owned) so one busy day does not break the streak. */
+function applyFreeze(){const keys=Object.keys(S.days).sort(),t=dayKey();if(!S.freeze||!keys.length)return;const last=keys[keys.length-1];if(last>=t)return;
+ const gap=[],d=new Date(last+'T12:00:00');for(let i=0;i<60;i++){d.setDate(d.getDate()+1);const k=dayKey(d);if(k>=t)break;gap.push(k)}
+ if(gap.length&&gap.length<=S.freeze){gap.forEach(k=>{S.days[k]=0;S.frozen.push(k)});S.freeze-=gap.length;save();setTimeout(()=>toast(`${I.snow} Seriya muzlatgichi ishlatildi: seriya saqlandi!`),700)}}
 const lvStart=L=>50*(L-1)*L;
 const levelOf=xp=>{let L=1;while(xp>=lvStart(L+1))L++;return L};
 const RANKS=['Tourist','Traveller','Explorer','Navigator','Pilot','Captain','Globetrotter','Legend'];
@@ -516,7 +562,7 @@ const stopLabel=s=>!s?'Hammasi tugadi!':s.t==='u'?`Unit ${s.n}: ${U(s.n).t}`:s.t
 /* ---------- screens ---------- */
 let CUR={act:{},key:null},SES=null;
 const topbar=()=>{const L=levelOf(S.xp),st=streak();return`<header class="bar"><a class="logo" href="#" aria-label="Destination A2, xarita"><span class="lg">Destination </span><b>A2</b></a><div class="chips">
-<span class="chip streak ${st?'':'dim'}" title="Kunlik seriya">${I.flame}${st}</span><span class="chip xp" title="Jami XP">${I.gem}${S.xp}</span><a class="chip lvl" href="#me" title="Profil">Lv ${L}</a></div></header>`};
+<span class="chip streak ${st?'':'dim'}" title="Kunlik seriya${S.freeze?` · ${S.freeze} ta muzlatgich`:''}">${I.flame}${st}${S.freeze?`<i class="fz">${I.snow}${S.freeze}</i>`:''}</span><span class="chip xp" title="Jami XP">${I.gem}${S.xp}</span><a class="chip lvl" href="#me" title="Profil">Lv ${L}</a></div></header>`};
 function greet(){const hr=new Date().getHours();const hi=hr<12?'Xayrli tong!':hr<18?'Salom!':'Xayrli kech!';const st=streak();
  if(!S.stats.sessions)return`${hi} Men Laylak, Buxorodan. Birga sayohat qilamizmi?<small>Hi! I'm Laylak. Let's travel and learn English.</small>`;
  if(todayXP()>=S.goal)return`${hi} Bugungi maqsad bajarildi. Qoyil!<small>Yana bir oz mashq qilsangiz, rekord bo'ladi.</small>`;
@@ -549,6 +595,7 @@ function home(){const ns=nextStop(),dk=S.daily[dayKey()],mc=mistakeCount(),off=[
 <nav class="modes" aria-label="O'yin rejimlari">
 <a class="mode daily" href="#daily">${I.cal}<b>Kunlik chaqiruv</b><span>${dk?`Bugun: ${dk.c}/10 · ${fmt(dk.t)}`:'10 savol, hammaga bir xil'}</span></a>
 <a class="mode blitz" href="#blitz">${I.bolt}<b>Blitz 60 s</b><span>${S.blitz?`Rekord: ${S.blitz}`:'Qancha tez javob berasiz?'}</span></a>
+<a class="mode games" href="#games">${I.cards}<b>O'yinlar</b><span>Xotira, harf jumbog'i, yashirin so'z, omon qolish</span></a>
 <a class="mode fix ${mc?'':'off'}" href="#mistakes">${I.redo}<b>Takrorlash</b><span>${mc?`Bugun ${due} ta · jami ${mc} ta xato`:'Hozircha xato yo\'q'}</span></a></nav>
 <div class="map-h"><h2>Sayohat xaritasi</h2><span>${done} / 14 shahar</span></div>
 <p class="book" aria-label="Kitob tuzilishi"><span class="bk"><b>28</b> grammatika</span><span class="bk"><b>14</b> lug'at</span><span class="bk"><b>${tp}/42</b> unit testi</span><span class="bk"><b>${done}/14</b> review</span><span class="bk"><b>${ep}/2</b> progress test</span></p>${legs}
@@ -589,7 +636,7 @@ ${cfg.boss?`<div class="battle"><div class="dev">${DEV}<span class="dmg" aria-hi
  else if(cfg.clock)SES.tick=setInterval(()=>{const t=$('.timer b');if(t&&SES)t.textContent=fmt(Math.round((Date.now()-SES.t0)/1000))},1000);
  next()}
 function stopSession(){if(SES&&SES.tick)clearInterval(SES.tick);SES=null}
-function updateBar(){const b=$('.pbar i');if(!b||!SES)return;b.style.width=(SES.boss?SES.bhp:SES.timer?(1-SES.left/SES.timer)*100:SES.done/SES.total*100)+'%';
+function updateBar(){const b=$('.pbar i');if(!b||!SES)return;b.style.width=(SES.boss?SES.bhp:SES.endless?SES.correct%10*10:SES.timer?(1-SES.left/SES.timer)*100:SES.done/SES.total*100)+'%';
  const hp=$('.hpbar');if(hp){hp.querySelector('i').style.width=SES.bhp+'%';hp.setAttribute('aria-valuenow',SES.bhp)}}
 function next(){if(!SES)return;if(!SES.queue.length&&SES.gen)SES.queue.push(SES.gen());const q=SES.queue.shift();if(!q)return SES.boss&&SES.bhp>0?fail():finish();
  SES.q=q;SES.state='q';SES.sel=null;SES.pairMiss=0;SES.hintLv=0;
@@ -649,7 +696,7 @@ const PLAY={
   sel.classList.remove('sel');
   if(sel.dataset.k===b.dataset.k){[sel,b].forEach(x=>{x.classList.add('done');x.disabled=true});sfx.tap();if(--s.pairLeft===0)grade(s.pairMiss<=1)}
   else{s.pairMiss++;[sel,b].forEach(x=>{x.classList.add('bad');shake(x);setTimeout(()=>x.classList.remove('bad'),450)});sfx.bad()}},
- check(){if(SES.state==='q')check();else if(SES.state==='fb'){if(SES.hearts&&SES.lives<=0)return fail();if(SES.boss&&SES.bhp<=0)return finish();next()}},
+ check(){if(SES.state==='q')check();else if(SES.state==='fb'){if(SES.hearts&&SES.lives<=0)return SES.endless?finish():fail();if(SES.boss&&SES.bhp<=0)return finish();next()}},
  stok(b){const s=SES;if(s.state!=='q')return;s.sel=+b.dataset.j;$$('.stok').forEach(x=>x.classList.toggle('sel',x===b));sfx.tap();$('[data-act=check]').disabled=false},
  sure(b){if(SES.state!=='q')return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');sfx.tap()},
  hint(b){const s=SES,q=s.q;if(s.state!=='q')return;s.hintLv++;q.hinted=true;let msg='';
@@ -797,6 +844,73 @@ ${d.gps.length?`<h2>B. Complete the sentences. <small>Gaplarni to'ldiring.</smal
 <article class="sheet-p key"><h2>Answer key / Javoblar kaliti · ${d.title}</h2><ol class="sp-k">${d.mcs.map(m=>`<li>${L[m.opts.indexOf(m.ans)]}) ${h(m.ans)}</li>`).join('')}${d.gps.map(g=>`<li>${h(g.ans.join(' / '))}</li>`).join('')}</ol></article></div>`;
  CUR={act:{print:()=>{try{window.print()}catch(e){}}},key:null}}
 
+/* ---------- word games (ideas from Destination-B1-quizes): memory, scramble, hidden word, survival ---------- */
+function wordPool(){const vs=UNITS.filter(u=>u.k==='v'),st=vs.filter(u=>crowns(u.n)),src=st.length?st:vs.slice(0,3);return src.flatMap(u=>u.W.map(w=>({en:w[0],uz:w[1],ex:w[2],n:u.n})))}
+const GAMES=[['memory','Xotira','Kartalarni ochib, inglizcha so\'z va o\'zbekcha ma\'noni juftlang',I.cards],['scramble','Harf jumbog\'i','Aralash harflardan so\'zni yig\'ing',I.abc],
+ ['hidden','Yashirin so\'z','O\'zbekcha ma\'nodan so\'zni harfma-harf toping, 6 ta jon',I.eye],['survival','Omon qolish','3 ta jon, vaqt yo\'q: qancha chidaysiz?',I.heart]];
+const G={};
+function gamesHub(){const started=UNITS.some(u=>u.k==='v'&&crowns(u.n));
+ app.innerHTML=`<div class="wrap">${topbar()}<a class="back" href="#">${I.back}Xarita</a><h1 class="page-h">O'yinlar</h1><p class="sub">${started?'Siz boshlagan lug\'at unitlaridagi so\'zlar bilan.':'Hozircha 3, 6 va 9-unit so\'zlari. Lug\'at unitlarini o\'ynasangiz, o\'yinlar ularning so\'zlarini oladi.'}</p>
+<div class="ghub">${GAMES.map(([id,t,d,ic])=>{const r=S.games[id];return`<a class="gcard g-${id}" href="#g-${id}"><span class="gic">${ic}</span><b>${t}</b><span>${d}</span><small>${r?`Rekord: ${r.best}${id==='memory'?' yulduz':''} · ${r.plays} marta`:'Hali o\'ynalmagan'}</small></a>`}).join('')}</div></div>`;
+ CUR={act:{},key:null}}
+function gameTop(t,d){return`${topbar()}<a class="back" href="#games">${I.back}O'yinlar</a><header class="g-head"><h1>${t}</h1><p>${d}</p></header>`}
+function gameEnd(id,o){const r=S.games[id]=S.games[id]||{best:0,plays:0};r.plays++;const rec=o.score>r.best;if(rec)r.best=o.score;addXP(o.xp);S.stats.sessions++;const nb=checkBadges({hour:new Date().getHours()});save();
+ app.innerHTML=`<div class="wrap center result">${mascot('cheer',rec?'Yangi rekord!':any(PRAISE))}<h1>${o.title}</h1><p class="sub">${o.sub||''}</p>
+<div class="stats"><div class="stat xp"><b>+${o.xp}</b><span>XP</span></div><div class="stat"><b>${o.score}</b><span>${o.unit||'Natija'}</span></div><div class="stat"><b>${r.best}</b><span>Rekord</span></div><div class="stat"><b>${r.plays}</b><span>O'yinlar soni</span></div></div>
+${o.extra||''}${nb.length?`<h2 style="margin-top:22px">Yangi nishon!</h2><div class="new-badges">${nb.map(badgeHTML).join('')}</div>`:''}
+<div class="actions"><button type="button" class="btn big" data-act="again">Yana o'ynash</button><a class="btn big ghost" href="#games">Boshqa o'yin</a></div></div>`;
+ sfx.win();if(rec)confetti();CUR={act:{again:o.again},key:null};window.scrollTo(0,0)}
+
+function gameMemory(){const pool=pick(wordPool().filter(w=>w.uz.length<=30),6),cards=shuffle(pool.flatMap((w,i)=>[{i,t:w.en,en:1},{i,t:w.uz,en:0}]));let open=[],moves=0,found=0,lock=false;
+ app.innerHTML=`<div class="wrap game">${gameTop('Xotira','Kartani oching, so\'ng uning juftini toping: inglizcha so\'z va o\'zbekcha ma\'no.')}
+<p class="g-stat"><span>Urinishlar: <b id="mv">0</b></span><span>Topildi: <b id="fd">0</b> / 6</span></p>
+<div class="mem">${cards.map((c,k)=>`<button type="button" class="mcard" data-act="flip" data-k="${k}" data-p="${c.i}" aria-label="Yopiq karta ${k+1}"><span class="mc-in"><span class="mc-f" aria-hidden="true">?</span><span class="mc-b ${c.en?'en':'uz'}" ${c.en?'':'lang="uz"'}>${h(c.t)}</span></span></button>`).join('')}</div></div>`;
+ CUR={act:{flip:b=>{if(lock||b.classList.contains('open'))return;const c=cards[+b.dataset.k];b.classList.add('open');b.setAttribute('aria-label',c.t);if(c.en)say(c.t);else sfx.tap();open.push([b,c]);if(open.length<2)return;
+  moves++;$('#mv').textContent=moves;const[[b1,c1],[b2,c2]]=open;open=[];
+  if(c1.i===c2.i){[b1,b2].forEach(x=>{x.classList.add('done');x.disabled=true});found++;$('#fd').textContent=found;sfx.ok();
+   if(found===6){const stars=moves<=8?3:moves<=12?2:1;setTimeout(()=>gameEnd('memory',{title:'Hamma juftlar topildi!',sub:`${moves} ta urinish`,score:stars,unit:'Yulduz',xp:30+stars*10,again:gameMemory,
+    extra:`<p class="res-stars" aria-label="${stars} / 3 yulduz">${[1,2,3].map(k=>`<span class="${k<=stars?'':'off'}">${I.crown}</span>`).join('')}</p>`}),600)}}
+  else{lock=true;sfx.bad();setTimeout(()=>{b1.classList.remove('open');b2.classList.remove('open');b1.setAttribute('aria-label','Yopiq karta');b2.setAttribute('aria-label','Yopiq karta');lock=false},900)}}},key:null}}
+
+function gameScramble(){const words=pick(wordPool().filter(w=>/^[a-z]{3,11}$/i.test(w.en)),8);let wi=0,score=0,hints=0,built=[];
+ app.innerHTML=`<div class="wrap game">${gameTop('Harf jumbog\'i','O\'zbekcha ma\'noga qarab, harflardan inglizcha so\'zni yig\'ing.')}<p class="g-stat"><span>So'z: <b id="wi">1</b> / ${words.length}</span><span>Ball: <b id="sc">0</b></span></p><section class="g-area"></section></div>`;
+ function show(){const w=words[wi],a=w.en.toLowerCase().split('');let l,t=0;do l=shuffle(a);while(l.join('')===a.join('')&&++t<12);built=[];hints=0;G.word=w.en.toLowerCase();
+  $('.g-area').innerHTML=`<p class="clue" lang="uz">${h(w.uz)}</p><div class="slots">${a.map(()=>'<span class="slot"></span>').join('')}</div>
+<div class="letters">${l.map((c,k)=>`<button type="button" class="ltr" data-act="ltr" data-k="${k}">${c}</button>`).join('')}</div>
+<div class="actions"><button type="button" class="btn ghost" data-act="undo">O'chirish</button><button type="button" class="btn ghost" data-act="ghint">${I.bulb} Harf ochish</button><button type="button" class="btn ghost" data-act="skip">O'tkazish</button></div>`;
+  $('#wi').textContent=wi+1}
+ function paint(){$$('.slot').forEach((x,i)=>{x.textContent=built[i]?built[i].c:'';x.classList.toggle('fixed',!!(built[i]&&built[i].fixed))})}
+ function place(b){if(b.disabled)return;built.push({c:b.textContent,b});b.disabled=true;sfx.tap();paint();if(built.length===G.word.length)judge()}
+ function judge(){const w=built.map(x=>x.c).join('');if(w===G.word){const pts=Math.max(2,10-3*hints);score+=pts;$('#sc').textContent=score;sfx.ok();say(G.word);$('.slots').classList.add('ok');setTimeout(nextW,800)}
+  else{sfx.bad();shake($('.slots'));setTimeout(()=>{built.filter(x=>!x.fixed).forEach(x=>x.b.disabled=false);built=built.filter(x=>x.fixed);paint()},500)}}
+ function nextW(){wi++;wi<words.length?show():gameEnd('scramble',{title:'Jumboq yechildi!',sub:`${words.length} ta so'z`,score,unit:'Ball',xp:Math.round(score/2)+10,again:gameScramble})}
+ CUR={act:{ltr:place,undo:()=>{const x=built[built.length-1];if(!x||x.fixed)return;built.pop();x.b.disabled=false;paint()},
+  ghint:()=>{built.filter(x=>!x.fixed).forEach(x=>x.b.disabled=false);built=built.filter(x=>x.fixed);const need=G.word[built.length];if(need==null)return;const b=$$('.ltr').find(x=>!x.disabled&&x.textContent===need);if(!b)return;hints++;built.push({c:need,b,fixed:true});b.disabled=true;paint();if(built.length===G.word.length)judge()},
+  skip:()=>{sfx.bad();$$('.slot').forEach((x,i)=>x.textContent=G.word[i]);setTimeout(nextW,900)}},
+  key:e=>{if(/^[a-z]$/i.test(e.key)){const b=$$('.ltr').find(x=>!x.disabled&&x.textContent===e.key.toLowerCase());if(b)place(b)}else if(e.key==='Backspace'){CUR.act.undo();e.preventDefault()}}};
+ show()}
+
+function gameHidden(){const words=pick(wordPool().filter(w=>/^[a-z]+( [a-z]+)?$/i.test(w.en)&&w.en.length<=14),5);let wi=0,score=0,lives=6,got=new Set(),over=false;
+ app.innerHTML=`<div class="wrap game">${gameTop('Yashirin so\'z','Ma\'noga qarab harflarni tanlang. Xato harf bitta jonni oladi.')}<p class="g-stat"><span>So'z: <b id="wi">1</b> / ${words.length}</span><span>Ball: <b id="sc">0</b></span><span class="lives" aria-label="Jonlar"></span></p><section class="g-area"></section></div>`;
+ function show(){const w=words[wi];lives=6;got=new Set();over=false;G.word=w.en.toLowerCase();
+  $('.g-area').innerHTML=`<p class="clue" lang="uz">${h(w.uz)}</p><div class="hidden-w" aria-live="polite"></div><div class="kbd">${'abcdefghijklmnopqrstuvwxyz'.split('').map(c=>`<button type="button" class="key" data-act="key" data-c="${c}">${c}</button>`).join('')}</div><div class="actions" id="hnext" hidden><button type="button" class="btn big" data-act="nextw">Keyingi so'z</button></div>`;
+  $('#wi').textContent=wi+1;paint()}
+ function paint(){$('.hidden-w').innerHTML=G.word.split('').map(c=>c===' '?'<span class="gap"></span>':`<span class="hl ${got.has(c)||over?'on':''}">${got.has(c)||over?c:''}</span>`).join('');$('.lives').innerHTML=`${I.heart}<b>${lives}</b>`}
+ function guess(c){if(over)return;const b=$(`.key[data-c="${c}"]`);if(!b||b.disabled)return;b.disabled=true;
+  if(G.word.includes(c)){got.add(c);b.classList.add('hit');sfx.tap();if(G.word.replace(/ /g,'').split('').every(x=>got.has(x))){over=true;score+=lives*5;$('#sc').textContent=score;sfx.ok();say(G.word);end(true)}}
+  else{lives--;b.classList.add('miss');sfx.bad();shake($('.lives'));if(lives<=0){over=true;end(false)}}paint()}
+ function end(won){$$('.key').forEach(k=>k.disabled=true);$('#hnext').hidden=false;const ex=words[wi].ex;$('.g-area').insertAdjacentHTML('beforeend',`<p class="g-ex ${won?'ok':'bad'}">${won?'Topdingiz!':'Jonlar tugadi.'} <i>${h(ex)}</i></p>`);$('[data-act=nextw]').focus()}
+ CUR={act:{key:b=>guess(b.dataset.c),nextw:()=>{wi++;wi<words.length?show():gameEnd('hidden',{title:'Yashirin so\'zlar ochildi!',sub:`${words.length} ta so'z`,score,unit:'Ball',xp:Math.round(score/3)+10,again:gameHidden})}},
+  key:e=>{if(/^[a-z]$/i.test(e.key))guess(e.key.toLowerCase());else if(e.key==='Enter'&&over&&!$('#hnext').hidden){CUR.act.nextw();e.preventDefault()}}};
+ show()}
+
+function survivalIntro(){intro({eyebrow:'O\'yin',title:'Omon qolish',sub:S.games.survival?`Rekordingiz: ${S.games.survival.best} ta to'g'ri javob`:'Birinchi rekordni o\'rnating!',bubble:'Vaqt yo\'q, shoshmang. Faqat xato qilmang!<small>No timer. Just don\'t make mistakes.</small>',
+ rules:['Savollar tugamaydi: siz boshlagan unitlardan aralash','3 ta jon: uchinchi xatoda o\'yin tugaydi','50/50 va +1 jon kuchlari ishlaydi'],back:'#games',start:playSurvival})}
+function playSurvival(){const pool=blitzPool();startSession({mode:'survival',endless:true,hearts:3,powers:true,back:'#games',
+ gen:()=>{const u=any(pool),r=RNG();return u.k==='v'&&r<.35?qWord(u,rnd(u.W.length),RNG()<.5?'uz':'en'):r<.6?qSpot(u,rnd(u.mc.length)):qMC(u,rnd(u.mc.length))},
+ onDone:s=>{const g=S.games.survival=S.games.survival||{best:0,plays:0};g.plays++;const rec=s.correct>g.best;if(rec)g.best=s.correct;const txt=`Destination A2 · Omon qolish: ${s.correct} ta to'g'ri javob`;
+  return{title:rec?'Yangi rekord!':`${s.correct} ta to'g'ri javob`,sub:`Rekord: ${g.best}`,big:rec,extra:`<div class="card" style="text-align:left"><h2>Do'stlaringizni chaqiring</h2>${shareBox(txt)}</div>`,act:Object.assign(copyAct(),{again:playSurvival}),buttons:`<button type="button" class="btn big" data-act="again">Yana bir marta</button><a class="btn big ghost" href="#games">Boshqa o'yin</a>`}}})}
+
 /* ---------- badges ---------- */
 const BADGES=[
  ['first','1','Birinchi parvoz','Birinchi mashg\'ulot',()=>S.stats.sessions>=1],
@@ -818,7 +932,9 @@ const BADGES=[
  ['test1','T','Birinchi test','Unit testini topshirish',()=>Object.values(S.tests).some(p=>p>=70)],
  ['test42','42T','Test ustasi','42 ta unit testini topshirish',()=>UNITS.every(u=>S.tests[u.n]>=70)],
  ['story','5S','Hikoyachi','5 ta shahar sahnasini tugatish',()=>Object.keys(S.scenes).length>=5],
- ['sure10','×2','O\'zini biladi','«Aniq bilaman» bilan 10 ta to\'g\'ri javob',()=>S.sure.ok>=10]];
+ ['sure10','×2','O\'zini biladi','«Aniq bilaman» bilan 10 ta to\'g\'ri javob',()=>S.sure.ok>=10],
+ ['arcade','4G','O\'yinchi','4 ta o\'yinning hammasini o\'ynash',()=>GAMES.every(g=>S.games[g[0]])],
+ ['survive15','15','Chidamli','Omon qolishda 15+ to\'g\'ri',()=>(S.games.survival||{}).best>=15]];
 function checkBadges(ctx){const got=[];BADGES.forEach(b=>{if(!S.badges[b[0]]&&b[4](ctx||{})===true){S.badges[b[0]]=dayKey();got.push(b)}});return got}
 const badgeHTML=b=>`<div class="badge ${S.badges[b[0]]?'':'locked'}"><span class="medal">${b[1]}</span><b>${b[2]}</b><span class="desc">${b[3]}</span></div>`;
 
@@ -831,7 +947,8 @@ function profile(){const L=levelOf(S.xp),a=lvStart(L),b=lvStart(L+1),st=S.stats;
 <section class="card"><h2>Statistika</h2><div class="grid-stats">
 <div class="stat xp"><b>${S.xp}</b><span>Jami XP</span></div><div class="stat"><b>${streak()}</b><span>Kunlik seriya</span></div><div class="stat"><b>${st.sessions}</b><span>Mashg'ulotlar</span></div>
 <div class="stat"><b>${acc}%</b><span>Aniqlik</span></div><div class="stat"><b>${allCrowns}/126</b><span>Tojlar</span></div><div class="stat"><b>${tp}/42</b><span>Unit testlari</span></div>
-<div class="stat"><b>${bosses}/14</b><span>Review</span></div><div class="stat"><b>${ep}/2</b><span>Progress test</span></div><div class="stat"><b>${S.blitz}</b><span>Blitz rekordi</span></div></div></section>
+<div class="stat"><b>${bosses}/14</b><span>Review</span></div><div class="stat"><b>${ep}/2</b><span>Progress test</span></div><div class="stat"><b>${S.blitz}</b><span>Blitz rekordi</span></div></div>
+<p class="note">${I.snow} Seriya muzlatgichi: <b>${S.freeze} / 2</b>. Kunlik maqsadni har 5 marta bajarganingizda bittasini olasiz; bir kun o'tkazib yuborsangiz, u seriyangizni saqlab qoladi.${S.frozen.length?` Ishlatilgan: ${S.frozen.length} marta.`:''}</p></section>
 <section class="card"><h2>Qiyin mavzular</h2>${(()=>{const top=Object.entries(S.errs).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,3);return top.length?`<ol class="weak">${top.map(([n,c])=>`<li><div><b>Unit ${n}: ${h(U(+n).t)}</b><span>${c} ta xato</span></div><a class="btn ghost" href="#u-${n}">Mashq qilish</a></li>`).join('')}</ol><p class="note">Xatolar ko'p bo'lgan unitlar. Ularni qayta o'ynang yoki «Takrorlash»dan foydalaning.</p>`:'<p class="note">Hali ma\'lumot yo\'q. Xato qilgan savollaringizdan bu yerda qiyin mavzular aniqlanadi.</p>'})()}</section>
 <section class="card"><h2>Nishonlar · ${Object.keys(S.badges).length}/${BADGES.length}</h2><div class="badges">${BADGES.map(badgeHTML).join('')}</div></section>
 <section class="card"><h2>Sozlamalar</h2>
@@ -856,6 +973,7 @@ function route(){stopSession();$('.overlay')?.remove();const hs=location.hash.sl
  if(m=hs.match(/^exam-([12])$/))return examIntro(+m[1]);
  if(m=hs.match(/^test-u-(\d+)$/))return testIntro(+m[1]);
  if(m=hs.match(/^scene-(\d+)$/))return scene(+m[1]);
+ if(hs==='games')return gamesHub();if(hs==='g-memory')return gameMemory();if(hs==='g-scramble')return gameScramble();if(hs==='g-hidden')return gameHidden();if(hs==='g-survival')return survivalIntro();
  if(m=hs.match(/^print-([urp])-(\d+)$/))return printView(m[1],+m[2]);
  if(hs==='daily')return dailyIntro();if(hs==='blitz')return blitzIntro();if(hs==='mistakes')return mistakesIntro();if(hs==='me')return profile();
  home();if(m=hs.match(/^leg-(\d+)$/)){const el=$('#leg-'+m[1]);if(el)el.scrollIntoView()}}
@@ -865,7 +983,7 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');i
  if(b.dataset.say!==undefined){e.preventDefault();return say(b.dataset.say,!!b.dataset.slow)}
  const f=CUR.act&&CUR.act[b.dataset.act];if(f){e.preventDefault();f(b)}});
 document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;if(CUR.key)CUR.key(e)});
-window.__a2={get q(){return SES&&SES.q},get state(){return S},get session(){return SES}};
-route();
+window.__a2={get q(){return SES&&SES.q},get state(){return S},get session(){return SES},game:G,applyFreeze};
+applyFreeze();route();
 })();
 </script></body></html>

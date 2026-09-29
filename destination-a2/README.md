@@ -6,7 +6,7 @@ All exercises are original material, not copied from the coursebook.
 *O'zbekcha:* Destination A2 kitobining 42 ta uniti asosidagi o'yin. Laylak bilan Toshkentdan Sidneygacha sayohat:
 28 ta grammatika va 14 ta lug'at uniti, har bir unitda 3 ta toj va 20 savollik unit testi (qog'oz varianti javoblar
 kaliti bilan), 14 ta Review (boss jangi), 2 ta Progress Test, har bir shahar uchun suhbat sahnasi, kunlik chaqiruv,
-Blitz va xatolarni oraliq takrorlash. Bitta `index.html` fayli internetsiz ham ishlaydi.
+Blitz, 4 ta so'z o'yini, seriya muzlatgichi va xatolarni oraliq takrorlash. Bitta `index.html` fayli internetsiz ham ishlaydi.
 
 ## How it plays
 
@@ -35,6 +35,11 @@ plus a story scene for each of the 14 cities.
 - **Progress Test 1 and 2** after units 21 and 42: 30 questions, pass at 70%, printable too.
 - **Daily challenge:** the same 10 questions for everyone on the same day, so a class can compare results.
 - **Blitz:** 60 seconds, answers checked on tap, personal record.
+- **Word games** (vocabulary of the units the learner has started): *Xotira* (flip cards to pair English words with
+  Uzbek meanings, stars by number of moves), *Harf jumbog'i* (build the word from scrambled letters, with a letter hint),
+  *Yashirin so'z* (guess the word letter by letter from its Uzbek meaning, 6 lives) and *Omon qolish* (endless mixed
+  questions until the third mistake). Physical keyboard works in all of them.
+- **Streak freeze:** earned once per 5 days with the daily goal met (up to 2); it fills a missed day so the streak survives.
 - **Spaced review of mistakes:** a missed question is due the same day, then 1 day and 3 days after each right answer;
   three right answers clear it.
 - **Progression:** XP, levels and ranks, a daily XP goal with a streak, 20 badges, and Laylak the Bukhara stork
@@ -54,6 +59,8 @@ Mechanics were chosen after reviewing open-source teaching projects and an evide
 - Confidence bet: Moodle's *certainty-based marking* and *confidence-calibration-check*.
 - Spaced review: *spaced-practice-scheduler*; retrieval-first design: *retrieval-practice-generator*, *retrieve-first-gate*.
 - Weak topics: the error taxonomy in `rafukei/EnglishAITeacherPlatform-`.
+- Word games (memory, scramble, hidden word, survival): the games hub in `v1pper717/Destination-B1-quizes`.
+- Streak freeze: the check-in freeze in `ava-agent/english-agent`.
 
 ## Build
 
@@ -93,5 +100,5 @@ node tests/smoke.js
 The smoke test plays through Chromium like a learner: a unit at each level (including wrong answers and their retry),
 a passed and a failed unit test, the printable sheets (and that they are stable), spaced review over three simulated days,
 a lost and a won boss battle, the hint ladder and confidence bet, a story scene, a progress test, the daily challenge
-(and checks it is identical in a second tab), a blitz with a fast-forwarded clock, the quit dialog, the unit screen,
+(and checks it is identical in a second tab), a blitz with a fast-forwarded clock, all four word games, a streak freeze, the quit dialog, the unit screen,
 the profile (theme, progress code export, reset and import), and every screen at 360 px phone width with web fonts blocked.

@@ -281,11 +281,55 @@ async function playToEnd(page, wrongFirst = 0) {
   await page.click('[data-act=import]');
   assert.ok((await state(page)).xp > 0, 'import restores progress');
 
+  // Word games: memory, scramble, hidden word, survival
+  await page.goto(URL + '#games');
+  assert.equal(await page.locator('.gcard').count(), 4);
+  await page.goto(URL + '#g-memory');
+  for (let pair = 0; pair < 6; pair++) {
+    const ks = await page.locator(`.mcard[data-p="${pair}"]`).evaluateAll(els => els.map(e => e.dataset.k));
+    await page.click(`.mcard[data-k="${ks[0]}"]`); await page.click(`.mcard[data-k="${ks[1]}"]`);
+  }
+  await page.waitForSelector('.result');
+  assert.equal((await state(page)).games.memory.best, 3, '6 moves = 3 stars');
+  await page.goto(URL + '#g-scramble');
+  for (let w = 0; w < 8; w++) {
+    const word = await page.evaluate(() => window.__a2.game.word);
+    for (const c of word) await page.keyboard.press(c);
+    if (w < 7) await page.waitForFunction(x => window.__a2.game.word !== x, word);
+  }
+  await page.waitForSelector('.result');
+  assert.equal((await state(page)).games.scramble.best, 80, '8 words x 10 points');
+  await page.goto(URL + '#g-hidden');
+  for (let w = 0; w < 5; w++) {
+    const word = await page.evaluate(() => window.__a2.game.word);
+    await page.keyboard.press('q'.repeat(word.includes('q') ? 0 : 1) || 'z');
+    for (const c of new Set(word.replace(/ /g, ''))) await page.keyboard.press(c);
+    await page.waitForSelector('#hnext:not([hidden])');
+    await page.keyboard.press('Enter');
+  }
+  await page.waitForSelector('.result');
+  assert.ok((await state(page)).games.hidden.best >= 5 * 25, 'one miss per word leaves 5 lives');
+  await page.goto(URL + '#g-survival');
+  await page.click('[data-act=start]');
+  await answer(page, true); await answer(page, true);
+  for (let i = 0; i < 3; i++) await answer(page, false);
+  await page.waitForSelector('.result');
+  assert.equal((await state(page)).games.survival.best, 2);
+
+  // Streak freeze fills one missed day
+  await page.evaluate(() => { const S = window.__a2.state, d = new Date(); d.setDate(d.getDate() - 2); const k = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    S.days = { [k]: 60 }; S.freeze = 1; localStorage.setItem('destA2.v3', JSON.stringify(S)); });
+  await page.goto(URL + '#me'); await page.goto(URL); await page.reload();
+  s = await state(page);
+  assert.equal(s.freeze, 0, 'freeze used');
+  assert.equal(Object.keys(s.days).length, 2, 'yesterday filled');
+  assert.match(await page.textContent('.chip.streak'), /2/);
+
   // Phone width: no sideways scrolling on any screen
   const phone = await ctx.newPage();
   phone.on('pageerror', e => errors.push(e.message));
   await phone.setViewportSize({ width: 360, height: 740 });
-  for (const hash of ['', '#u-16', '#u-3', '#play-u-16-3', '#play-u-3-1', '#boss-4', '#blitz', '#daily', '#mistakes', '#me', '#exam-2', '#test-u-7', '#print-u-12', '#print-p-1', '#scene-5', '#play-u-9-3']) {
+  for (const hash of ['', '#u-16', '#u-3', '#play-u-16-3', '#play-u-3-1', '#boss-4', '#blitz', '#daily', '#mistakes', '#me', '#exam-2', '#test-u-7', '#print-u-12', '#print-p-1', '#scene-5', '#play-u-9-3', '#games', '#g-memory', '#g-scramble', '#g-hidden']) {
     await phone.goto(URL + hash);
     await phone.waitForTimeout(100);
     const [sw, w] = await phone.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
