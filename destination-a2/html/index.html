@@ -1109,7 +1109,10 @@ function assignFile(a){const css=[...document.querySelectorAll('style')].map(x=>
 <script id="a2-data" type="application/json">${j(data)}<\/script>
 <script id="a2-assign" type="application/json">${j(cfg)}<\/script>
 <script>${js}<\/script></body></html>`}
-function download(name,text){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/html;charset=utf-8'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000)}
+// Inside the claude.ai viewer a page may not start downloads itself; the `downloads` capability asks the viewer instead.
+async function download(name,text){const dls=window.claude&&window.claude.use?await window.claude.use('downloads').catch(()=>null):null;
+ if(dls){try{await dls.save({filename:name,data:text});return true}catch(e){return false}}
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/html;charset=utf-8'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);return true}
 const slug=t=>t.toLowerCase().replace(/[ʻʼ'’`‘]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'topshiriq';
 const rid=n=>Array.from(crypto.getRandomValues(new Uint8Array(n)),b=>'abcdefghijkmnpqrstuvwxyz23456789'[b%32]).join('');
 const fileName=a=>`Topshiriq-${slug(a.title)}-${a.id}.html`;
@@ -1150,9 +1153,9 @@ ${saved.length?`<section class="card"><h2>Yaratilgan topshiriqlar</h2><ul class=
  CUR={act:{legall:b=>{const bx=$$('input',b.closest('fieldset')),on=!bx.every(x=>x.checked);bx.forEach(x=>x.checked=on);upd()},
   att:b=>{att=+b.dataset.v;$$('[data-act=att]').forEach(x=>x.setAttribute('aria-pressed',x===b))},
   mkfile:()=>{const a=readForm();if(!a)return;a.id=rid(6);a.secret=rid(12);a.made=Date.now();let html;try{html=assignFile(a)}catch(e){return msg('Faylni yaratib bo\'lmadi.')}
-   S.assigns[a.id]=a;save();download(fileName(a),html);sfx.win();teacher(`Fayl tayyor: ${fileName(a)}. Yuklab olinmasa, sahifani (Destination-A2.html) kompyuterda brauzerda ochib qayta yarating.`)},
+   S.assigns[a.id]=a;save();sfx.win();teacher(`Topshiriq yaratildi: ${fileName(a)}. Yuklab olinmasa, «Yaratilgan topshiriqlar»dagi «Yana yuklab olish»ni bosing.`);download(fileName(a),html).then(ok=>{if(!ok)msg('Fayl saqlanmadi. «Yana yuklab olish» tugmasi bilan qayta urining.')})},
   preview:()=>{const a=readForm();if(!a)return;Object.assign(a,{id:'preview',secret:'preview'});try{sessionStorage.setItem('destA2.preview',JSON.stringify(a));localStorage.removeItem('destA2.as.preview');location.hash='';location.reload()}catch(e){msg('Oldindan ko\'rish bu brauzerda ishlamadi.')}},
-  redl:b=>{const a=S.assigns[b.dataset.id];if(a){download(fileName(a),assignFile(a));msg(`Yuklab olindi: ${fileName(a)}`)}},
+  redl:b=>{const a=S.assigns[b.dataset.id];if(a)download(fileName(a),assignFile(a)).then(ok=>msg(ok?`Yuklab olindi: ${fileName(a)}`:'Fayl saqlanmadi.'))},
   del:b=>{if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Rostdan o\'chirasizmi?';return}delete S.assigns[b.dataset.id];save();teacher('Topshiriq o\'chirildi. Uning natijalarini endi tekshirib bo\'lmaydi.')},
   verify:()=>{res=verifyResults($('#as-res').value);$('#as-out').innerHTML=verifyHTML(res);if(res.length)sfx.tap()},
   tsv:b=>{const t=$('#tsv'),head=['O\'quvchi','Topshiriq','Bajarildi','Yuborilgan','Holat','Vazifalar'];
