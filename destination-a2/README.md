@@ -7,6 +7,8 @@ All exercises are original material, not copied from the coursebook.
 28 ta grammatika va 14 ta lug'at uniti, har bir unitda 3 ta toj va 20 savollik unit testi (qog'oz varianti javoblar
 kaliti bilan), 14 ta Review (boss jangi), 2 ta Progress Test, har bir shahar uchun suhbat sahnasi, kunlik chaqiruv,
 Blitz, 4 ta so'z o'yini, seriya muzlatgichi va xatolarni oraliq takrorlash. Bitta `index.html` fayli internetsiz ham ishlaydi.
+**O'qituvchi bo'limi** (`#teacher`): o'quvchiga butun o'yinni emas, faqat tanlangan unit va vazifalardan iborat alohida
+HTML fayl yaratiladi; o'quvchi natija matnini kod bilan qaytaradi, o'qituvchi uni tekshiradi va sinf jadvalini oladi.
 
 ## How it plays
 
@@ -44,6 +46,27 @@ plus a story scene for each of the 14 cities.
   three right answers clear it.
 - **Progression:** XP, levels and ranks, a daily XP goal with a streak, 20 badges, and Laylak the Bukhara stork
   reacting to answers. The profile lists the units with the most mistakes. Interface language is Uzbek; content is English.
+
+## Teacher assignments
+
+The teacher page (`#teacher`, linked at the bottom of the map and in the profile) turns a chosen slice of the course into
+a separate file for students, so they do not get the whole game:
+
+1. **Pick** units (per city or one by one), tasks (crown levels 1–3, unit test, review battle over the chosen units,
+   story scenes of those cities, word games), the number of unit-test attempts (1, 2, 3 or unlimited), a title,
+   an optional due date and a note. *Oldindan ko'rish* opens the student view in the same tab.
+2. **Send** the downloaded `Topshiriq-….html` (about 150–250 KB, works offline) through Telegram or any messenger.
+   It holds only the chosen units' data: no other units, no printable sheets, no answer keys. Students type their name,
+   see a checklist of tasks, and play only those. While test attempts remain, a result shows which answers were wrong
+   but not the right ones; an attempt counts as soon as it starts. With unlimited attempts the first score is reported too.
+3. **Check.** The student copies a plain-text result (each task with its score, done count, average, time) that ends
+   with a code. Pasting one or many results into *Natijalarni tekshirish* marks each as genuine, edited or unknown
+   and builds a class table that copies into Excel.
+
+The code is a hash of the result lines and a per-assignment secret kept in the teacher's browser, so checking works in the
+browser that created the assignment (move it with the progress code). It catches an edited result text; it cannot stop a
+student who edits the browser's storage, so treat it as a check, not a lock. Downloads need a normal browser: the file
+cannot be saved from inside a sandboxed preview such as the claude.ai artifact view.
 
 Progress lives in the browser's `localStorage`: it stays on that device and browser unless moved with the progress code.
 
@@ -101,4 +124,7 @@ The smoke test plays through Chromium like a learner: a unit at each level (incl
 a passed and a failed unit test, the printable sheets (and that they are stable), spaced review over three simulated days,
 a lost and a won boss battle, the hint ladder and confidence bet, a story scene, a progress test, the daily challenge
 (and checks it is identical in a second tab), a blitz with a fast-forwarded clock, all four word games, a streak freeze, the quit dialog, the unit screen,
-the profile (theme, progress code export, reset and import), and every screen at 360 px phone width with web fonts blocked.
+the profile (theme, progress code export, reset and import), the teacher flow (build and download an assignment file,
+play it as a student with the name gate, blocked routes, level, test attempt limits and hidden answers, review battle,
+result text, then verify genuine, edited and unknown results and the Excel table, preview and delete), and every screen
+at 360 px phone width with web fonts blocked.

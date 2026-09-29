@@ -523,6 +523,51 @@ textarea.code{display:block;width:100%;min-height:80px;font:14px ui-monospace,Me
 .toast.show{opacity:1;transform:translate(-50%,0)}.toast svg{color:var(--flame)}
 .confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
 footer.foot{color:var(--muted);font-size:13px;text-align:center;margin-top:36px}
+/* teacher page and assignment mode */
+.teach-link{display:flex;gap:14px;align-items:center;margin-top:28px;padding:14px 16px;border-radius:20px;border:2px dashed var(--line);color:var(--ink);text-decoration:none;background:var(--surface)}
+.teach-link svg{width:34px;height:34px;color:var(--tile);flex:none}.teach-link span{min-width:0}.teach-link b{display:block;font:600 18px var(--f-display)}.teach-link small{color:var(--muted);font-weight:700}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;list-style:none;padding:0;margin:14px 0 0}
+.how li{padding:12px 14px;border-radius:16px;background:var(--gold-soft);font-size:14px;font-weight:700;color:var(--muted)}.how b{display:block;font:600 17px var(--f-display);color:var(--ink)}
+.text-in{display:block;width:100%;font:inherit;font-weight:700;padding:11px 12px;border-radius:12px;border:2px solid var(--line);background:var(--sunk);color:var(--ink);resize:vertical}
+.text-in:focus{outline:none;border-color:var(--lapis)}
+.fl{display:block;font-weight:800;margin:14px 0 6px}.fl:first-of-type{margin-top:0}
+.legs-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.lp{border:2px solid var(--line);border-radius:16px;padding:6px 10px 8px;margin:0;min-width:0}
+.lp legend{display:flex;gap:8px;align-items:center;font:600 16px var(--f-display);padding:0 6px}
+.mini{font:800 12px var(--f-body);padding:3px 9px;border-radius:99px;border:2px solid var(--line);background:var(--surface);color:var(--lapis);cursor:pointer}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:6px 4px;cursor:pointer;border-radius:10px}
+.ck input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--lapis);flex:none}
+.ck span{min-width:0;line-height:1.3;overflow-wrap:anywhere}.ck small{display:block;color:var(--muted);font-weight:700;font-size:13px}.ck.big b{font:600 17px var(--f-display)}
+.kd{font-style:normal;font-size:11px;font-weight:800;padding:1px 7px;border-radius:99px;background:var(--sunk);color:var(--muted);white-space:nowrap}.kd.v{background:var(--tile-soft);color:var(--tile-deep)}
+.parts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:4px 12px;margin-bottom:8px}
+.sum{margin:0}.sum b{display:block;font:600 20px var(--f-display)}.sum small{display:block;color:var(--bad);font-weight:800}
+.as-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.as-list li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:12px;border-radius:14px;background:var(--sunk)}
+.as-list li>div{min-width:0;flex:1 1 220px}.as-list b{display:block;overflow-wrap:anywhere}.as-list small{color:var(--muted);font-weight:700}
+.as-list .actions{margin:0;flex:1 1 260px}.as-list .actions>*{flex:1 1 120px;padding:10px 14px;font-size:15px}
+.vgroup h3{font-size:19px;margin:18px 0 8px}.vgroup small{color:var(--muted);font:700 14px var(--f-body)}
+.vtable-w{overflow-x:auto}.vtable{width:100%;border-collapse:collapse;font-size:15px}
+.vtable th,.vtable td{text-align:left;padding:8px;border-bottom:2px solid var(--sunk);vertical-align:top}
+.vtable th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.vtable summary{font-weight:800;cursor:pointer}.vtable ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+.vst{display:inline-block;padding:3px 10px;border-radius:99px;font-weight:800;font-size:13px;white-space:nowrap}
+.vst.ok{background:var(--ok-soft);color:var(--ok-deep)}.vst.bad{background:var(--bad-soft);color:var(--bad-deep)}.vst.unk{background:var(--sunk);color:var(--muted)}
+.as-head{margin-top:12px;padding:20px;border-radius:24px;background:var(--lapis);color:var(--on-lapis)}
+.as-head .eyebrow{color:inherit;opacity:.85}.as-head h1{font-size:clamp(28px,6vw,40px);margin-bottom:6px;overflow-wrap:anywhere}
+.as-note{margin:0 0 10px;font-weight:700;white-space:pre-line;overflow-wrap:anywhere}
+.due{display:inline-flex;gap:6px;align-items:center;margin:0;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.2);font-weight:800}.due svg{width:18px;height:18px}.due.late{background:var(--pom);color:#fff}
+.as-prog{display:flex;gap:14px;align-items:center}.as-prog>div{min-width:0}.as-prog b{font:600 20px var(--f-display);display:block}.as-prog p{margin:0;color:var(--muted);font-weight:700}
+.linkish{border:0;background:none;padding:0;color:var(--lapis);font:inherit;text-decoration:underline;cursor:pointer}
+.au-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}.au-h>div{min-width:0}.au-h h2{margin:0;overflow-wrap:anywhere}.au-h .btn{padding:9px 14px;font-size:15px;flex:none}
+.tasks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.trow{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:16px;border:2px solid var(--line);border-bottom-width:4px;color:var(--ink);text-decoration:none;background:var(--surface)}
+.trow .tk{display:grid;place-items:center;width:30px;height:30px}.trow .tk i{width:22px;height:22px;border-radius:50%;border:3px solid var(--line)}
+.trow .tk svg{width:28px;height:28px;color:var(--bad)}.trow.done .tk svg{color:var(--ok)}.trow.done{background:var(--ok-soft);border-color:var(--ok)}
+.trow .tl{min-width:0}.trow b{display:block;font:600 17px var(--f-display)}.trow small{color:var(--muted);font-weight:700;font-size:13px;overflow-wrap:anywhere}
+.trow .go{font:700 15px var(--f-display);color:var(--lapis)}
+.name-f{display:flex;flex-wrap:wrap;gap:10px}.name-f .text-in{flex:1 1 220px;width:auto}.name-f .btn{flex:1 1 120px}
+.send .share-box{font:14px/1.45 ui-monospace,Menlo,monospace;resize:vertical}
+.banner.pv{background:var(--tile-soft);border-color:var(--tile);flex-wrap:wrap}.banner.pv>div{flex:1 1 220px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 """
 
@@ -530,7 +575,12 @@ JS = r"""
 (()=>{
 'use strict';
 const DATA=JSON.parse(document.getElementById('a2-data').textContent);
-const UNITS=DATA.units,CITIES=DATA.cities,SCENES=DATA.scenes,U=n=>UNITS[n-1];
+const UNITS=DATA.units,CITIES=DATA.cities,SCENES=DATA.scenes,UMAP={};UNITS.forEach(u=>UMAP[u.n]=u);const U=n=>UMAP[n];
+/* Assignment mode: a teacher-made file carries only the chosen units plus a config (#a2-assign);
+   the teacher's own preview keeps the config in sessionStorage. Then the app shows only those tasks. */
+let AS=null,PREVIEW=false;
+try{const el=document.getElementById('a2-assign');if(el)AS=JSON.parse(el.textContent)}catch(e){}
+if(!AS)try{const pv=sessionStorage.getItem('destA2.preview');if(pv){AS=JSON.parse(pv);PREVIEW=true}}catch(e){}
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const app=$('#app');
 const h=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -571,6 +621,7 @@ const I={
  cards:svg('<rect x="3" y="4" width="11" height="15" rx="2" fill="currentColor" opacity=".45"/><rect x="10" y="5" width="11" height="15" rx="2" fill="currentColor"/>'),
  abc:svg('<path d="M3 18 6.5 6h1L11 18M4.3 14h5.4M13 6h4a3 3 0 0 1 0 6h-4zm0 6h4.5a3 3 0 0 1 0 6H13z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>'),
  eye:svg('<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/>'),
+ clip:svg('<rect x="5" y="4" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M9 4.5V2.5h6v2M8.5 11l2 2 4-4M8.5 17h7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'),
  chat:svg('<path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M7 9h10M7 12h6" stroke="rgba(0,0,0,.35)" stroke-width="2" stroke-linecap="round"/>')
 };
 const DEV=`<svg class="dev-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M24 34 10 6l24 18zM76 34 90 6 66 24z" fill="var(--gold)" stroke="var(--m-line)" stroke-width="3" stroke-linejoin="round"/>
@@ -592,8 +643,8 @@ const STORK=`<svg class="stork" viewBox="0 0 120 120" aria-hidden="true">
 const mascot=(mood,text)=>`<div class="mascot ${mood||'idle'}">${STORK}${text?`<div class="bubble">${text}</div>`:''}</div>`;
 
 /* ---------- state ---------- */
-const KEY='destA2.v3';
-const FRESH=()=>({xp:0,days:{},crowns:{},boss:{},exam:{},mistakes:{},fixed:0,badges:{},blitz:0,daily:{},tests:{},errs:{},powers:{half:1,heal:0},scenes:{},sure:{n:0,ok:0},games:{},freeze:0,goalDays:0,frozen:[],stats:{sessions:0,correct:0,answered:0,maxCombo:0,secs:0},goal:50,sound:true,theme:null,tasks:{}});
+const KEY=AS?'destA2.as.'+AS.id:'destA2.v3';
+const FRESH=()=>({xp:0,days:{},crowns:{},boss:{},exam:{},mistakes:{},fixed:0,badges:{},blitz:0,daily:{},tests:{},errs:{},powers:{half:1,heal:0},scenes:{},sure:{n:0,ok:0},games:{},freeze:0,goalDays:0,frozen:[],stats:{sessions:0,correct:0,answered:0,maxCombo:0,secs:0},goal:50,sound:true,theme:null,tasks:{},assigns:{},name:'',lv:{},tries:{},firstT:{},rev:null,revFail:0});
 let S=FRESH();
 function load(raw){const o=Object.assign(FRESH(),raw);o.stats=Object.assign(FRESH().stats,raw.stats||{});o.powers=Object.assign(FRESH().powers,raw.powers||{});o.sure=Object.assign(FRESH().sure,raw.sure||{});
  for(const k in o.mistakes)if(typeof o.mistakes[k]!=='object')o.mistakes[k]={b:0,d:dayKey()}; // older saves stored a counter
@@ -635,6 +686,7 @@ const TTS='speechSynthesis' in window;if(!TTS)document.documentElement.classList
 function say(t,slow){if(!TTS||!t)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=slow?.6:.92;
  const vs=speechSynthesis.getVoices();const v=vs.find(x=>/^en[-_]GB/i.test(x.lang))||vs.find(x=>/^en/i.test(x.lang));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
 if(TTS)try{speechSynthesis.getVoices()}catch(e){}
+if(AS)document.title=AS.title+' · Destination A2';
 function toast(html){let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast';t.setAttribute('role','status');document.body.appendChild(t)}
  t.innerHTML=html;t.classList.remove('show');void t.offsetWidth;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1800)}
 function confetti(){if(RM)return;const c=document.createElement('canvas');c.className='confetti';document.body.appendChild(c);
@@ -689,9 +741,9 @@ function unitQuestions(u,L){const mA=range(u.mc.length),g=range(u.gaps.length),o
 /* ---------- journey structure ---------- */
 const legUnits=i=>[3*i+1,3*i+2,3*i+3];
 const legOf=n=>Math.floor((n-1)/3);
-function nextStop(){for(let i=0;i<14;i++){for(const n of legUnits(i)){if(!crowns(n))return{t:'u',n};if(!(n in S.tests))return{t:'test',n}}if(!S.boss[i])return{t:'boss',i};if(S.scenes[i]==null)return{t:'scene',i};if(i===6&&!(S.exam[1]>=70))return{t:'exam',k:1}}
+function nextStop(){if(AS)return null;for(let i=0;i<14;i++){for(const n of legUnits(i)){if(!crowns(n))return{t:'u',n};if(!(n in S.tests))return{t:'test',n}}if(!S.boss[i])return{t:'boss',i};if(S.scenes[i]==null)return{t:'scene',i};if(i===6&&!(S.exam[1]>=70))return{t:'exam',k:1}}
  if(!(S.exam[2]>=70))return{t:'exam',k:2};const n=UNITS.find(u=>crowns(u.n)<3);return n?{t:'u',n:n.n}:null}
-const stopHref=s=>!s?'#me':s.t==='u'?`#play-u-${s.n}-${Math.min(3,crowns(s.n)+1)}`:s.t==='test'?`#test-u-${s.n}`:s.t==='boss'?`#boss-${s.i}`:s.t==='scene'?`#scene-${s.i}`:`#exam-${s.k}`;
+const stopHref=s=>!s?(AS?'#':'#me'):s.t==='u'?`#play-u-${s.n}-${Math.min(3,crowns(s.n)+1)}`:s.t==='test'?`#test-u-${s.n}`:s.t==='boss'?`#boss-${s.i}`:s.t==='scene'?`#scene-${s.i}`:`#exam-${s.k}`;
 const stopLabel=s=>!s?'Hammasi tugadi!':s.t==='u'?`Unit ${s.n}: ${U(s.n).t}`:s.t==='test'?`Unit ${s.n} testi · 20 savol`:s.t==='boss'?`Review ${s.i+1}: ${CITIES[s.i].name} darvozasi`:s.t==='scene'?`Sahna: ${SCENES[s.i].title}`:`Progress Test ${s.k}`;
 
 /* ---------- screens ---------- */
@@ -707,7 +759,8 @@ const crownRow=n=>`<span class="crowns" aria-label="${n} / 3 toj">${[1,2,3].map(
 const gradeOf=p=>p>=86?[5,'a\'lo']:p>=70?[4,'yaxshi']:p>=55?[3,'qoniqarli']:[2,'qoniqarsiz'];
 const gradeChip=p=>`<span class="grade g${gradeOf(p)[0]}" title="${p}%">${gradeOf(p)[0]}</span>`;
 function gradeBanner(p){const[g,t]=gradeOf(p);return`<div class="banner grade-b">${gradeChip(p)}<div><b>Baho: ${g} (${t})</b><p>${p}% · o'tish chegarasi 70%</p></div></div>`}
-function reviewList(log){return`<section class="card answers"><h2>Javoblaringiz</h2><ol>${log.map(r=>`<li class="${r.ok?'ok':'bad'}"><span class="mk">${r.ok?I.check:I.cross}</span><div><p>${h(r.q.full)}</p>${r.ok?'':`<p class="yours">Sizning javobingiz: <s>${h(r.given||'—')}</s></p>`}</div></li>`).join('')}</ol></section>`}
+function reviewList(log,hide){ // hide = attempts remain, so show which answers were wrong but not the right ones
+ return`<section class="card answers"><h2>Javoblaringiz</h2>${hide?'<p class="note">To\'g\'ri javoblar urinishlar tugagach ko\'rsatiladi.</p>':''}<ol>${log.map(r=>`<li class="${r.ok?'ok':'bad'}"><span class="mk">${r.ok?I.check:I.cross}</span><div><p>${hide?r.q.prompt.replace('___','<span class="blank"></span>'):h(r.q.full)}</p>${r.ok?'':`<p class="yours">Sizning javobingiz: <s>${h(r.given||'—')}</s></p>`}</div></li>`).join('')}</ol></section>`}
 const you=(t,o)=>`<span class="you ${o>0?'l':''}">${STORK}<span>${t}</span></span>`;
 
 function home(){const ns=nextStop(),dk=S.daily[dayKey()],mc=mistakeCount(),off=[0,1,0,-1];
@@ -734,19 +787,20 @@ function home(){const ns=nextStop(),dk=S.daily[dayKey()],mc=mistakeCount(),off=[
 <a class="mode fix ${mc?'':'off'}" href="#mistakes">${I.redo}<b>Takrorlash</b><span>${mc?`Bugun ${due} ta · jami ${mc} ta xato`:'Hozircha xato yo\'q'}</span></a></nav>
 <div class="map-h"><h2>Sayohat xaritasi</h2><span>${done} / 14 shahar</span></div>
 <p class="book" aria-label="Kitob tuzilishi"><span class="bk"><b>28</b> grammatika</span><span class="bk"><b>14</b> lug'at</span><span class="bk"><b>${tp}/42</b> unit testi</span><span class="bk"><b>${done}/14</b> review</span><span class="bk"><b>${ep}/2</b> progress test</span></p>${legs}
+<a class="teach-link" href="#teacher">${I.clip}<span><b>O'qituvchi uchun</b><small>O'quvchilarga faqat tanlangan unit va vazifalarni fayl qilib bering</small></span></a>
 <footer class="foot">Destination A2 kitobi unitlari asosidagi original mashqlar. Progress shu brauzerda saqlanadi.</footer></div>`;
  CUR={act:{},key:null}}
 
-function unitView(n){const u=U(n);if(!u)return home();const cr=crowns(n),c=CITIES[legOf(n)];
+function unitView(n){const u=U(n);if(!u)return goHome();const cr=crowns(n),c=CITIES[legOf(n)],lvs=AS?[1,2,3].filter(L=>AS.parts.includes(''+L)):[1,2,3],showTest=!AS||AS.parts.includes('t');
  let learn;
  if(u.k==='g'){learn=`<div class="learn">${u.L.map((r,i)=>`<article class="rule" ${i?'hidden':''}><h3>${h(r[0])}</h3><ul>${r[1].map(l=>l.startsWith('UZ: ')?`<li class="uz"><span class="uzchip">UZ</span><span lang="uz">${l.slice(4)}</span></li>`:`<li>${l}</li>`).join('')}</ul></article>`).join('')}</div>
   ${u.L.length>1?`<div class="learn-nav"><button type="button" class="btn ghost" data-act="prev">Oldingi</button><span class="dots">${u.L.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</span><button type="button" class="btn ghost" data-act="next">Keyingi</button></div>`:''}`}
  else learn=`<ul class="words">${u.W.map(w=>`<li class="word"><button type="button" class="speak sm" data-say="${h(w[0])}" aria-label="Tinglash: ${h(w[0])}">${I.speaker}</button><div><b>${h(w[0])}</b><span lang="uz">${h(w[1])}</span></div></li>`).join('')}</ul><p class="tip"><b>Tip:</b> ${h(u.tip)}</p>`;
- app.innerHTML=`<div class="wrap">${topbar()}<a class="back" href="#leg-${legOf(n)}">${I.back}Xarita</a>
+ app.innerHTML=`<div class="wrap">${topbar()}<a class="back" href="${AS?'#':`#leg-${legOf(n)}`}">${I.back}${AS?'Topshiriqlar':'Xarita'}</a>
 <header class="unit-head ${u.k}"><p class="eyebrow">Unit ${n} · ${u.k==='v'?'Lug\'at':'Grammatika'} · ${c.name}</p><h1>${h(u.t)}</h1>${crownRow(cr)}</header>
-<section class="levels" aria-label="Darajalar">${[1,2,3].map(L=>`<a class="level ${cr>=L?'done':''}" href="#play-u-${n}-${L}"><span class="lv-c">${I.crown}</span><span><b>${L}-daraja: ${LEVELS[L].name}</b><span>${LEVELS[L].desc}</span></span><span class="go">${cr>=L?'Yana':'O\'ynash'}</span></a>`).join('')}</section>
-<section class="card testcard"><div class="tc-h"><div><h2>Unit ${n} testi</h2><p class="note">20 savol: 15 ta variantli, 5 ta yozma. Mashqda uchramagan savollar. Javoblar test oxirida ko'rsatiladi.</p></div>${n in S.tests?gradeChip(S.tests[n]):''}</div>
-${n in S.tests?`<p class="note">Eng yaxshi natija: ${S.tests[n]}% · baho ${gradeOf(S.tests[n]).join(', ')}</p>`:''}<div class="actions"><a class="btn gold" href="#test-u-${n}">${n in S.tests?'Qayta topshirish':'Testni boshlash'}</a><a class="btn ghost" href="#print-u-${n}">Qog'oz varianti</a></div></section>
+${lvs.length?`<section class="levels" aria-label="Darajalar">${lvs.map(L=>{const d=AS?S.lv[n+'-'+L]!=null:cr>=L;return`<a class="level ${d?'done':''}" href="#play-u-${n}-${L}"><span class="lv-c">${I.crown}</span><span><b>${L}-daraja: ${LEVELS[L].name}</b><span>${AS&&d?`Natija: ${S.lv[n+'-'+L]}%`:LEVELS[L].desc}</span></span><span class="go">${d?'Yana':'O\'ynash'}</span></a>`}).join('')}</section>`:''}
+${showTest?`<section class="card testcard"><div class="tc-h"><div><h2>Unit ${n} testi</h2><p class="note">20 savol: 15 ta variantli, 5 ta yozma. Mashqda uchramagan savollar. Javoblar test oxirida ko'rsatiladi.</p></div>${n in S.tests?gradeChip(S.tests[n]):''}</div>
+${n in S.tests?`<p class="note">Eng yaxshi natija: ${S.tests[n]}% · baho ${gradeOf(S.tests[n]).join(', ')}</p>`:''}<div class="actions"><a class="btn gold" href="#test-u-${n}">${n in S.tests?'Qayta topshirish':'Testni boshlash'}</a>${AS?'':`<a class="btn ghost" href="#print-u-${n}">Qog'oz varianti</a>`}</div></section>`:''}
 <section class="card"><h2>${u.k==='g'?'Qoida':'So\'zlar'}</h2>${learn}</section>
 <section class="card task"><h2>Bonus: gapiring va yozing</h2><p>${h(u.task)}</p><button type="button" class="btn ${S.tasks[n]?'ghost':'gold'}" data-act="task" ${S.tasks[n]?'disabled':''}>${S.tasks[n]?'Bajarildi':'Bajardim · +20 XP'}</button></section></div>`;
  let r=0;const show=d=>{const arts=$$('.rule');r=(r+d+arts.length)%arts.length;arts.forEach((a,i)=>a.hidden=i!==r);$$('.dots i').forEach((x,i)=>x.classList.toggle('on',i===r))};
@@ -843,7 +897,7 @@ const PLAY={
   if(p==='half'){if(s.q.kind!=='choice')return toast('50/50 faqat variantli savolda ishlaydi');const w=$$('.opt').filter((x,i)=>s.q.opts[i]!==s.q.ans&&!x.disabled);if(!w.length)return;const x=any(w);x.disabled=true;x.classList.add('gone')}
   if(p==='heal'){s.lives++;const hb=$('.hearts b');if(hb)hb.textContent=s.lives}
   S.powers[p]--;$('b',b).textContent=S.powers[p];save();sfx.combo()},
- quit(){const back=SES.back||'#';const o=document.createElement('div');o.className='overlay';o.innerHTML=`<div class="dialog" role="dialog" aria-modal="true" aria-labelledby="qt">${mascot('sad')}<h2 id="qt">Chiqib ketasizmi?</h2><p>Bu mashg'ulotdagi natija saqlanmaydi.</p><div class="actions"><button type="button" class="btn" data-act="stay">Davom etaman</button><button type="button" class="btn ghost" data-act="leave">Chiqish</button></div></div>`;$('.play').appendChild(o);$('[data-act=stay]',o).focus();
+ quit(){const back=SES.back||'#';const o=document.createElement('div');o.className='overlay';o.innerHTML=`<div class="dialog" role="dialog" aria-modal="true" aria-labelledby="qt">${mascot('sad')}<h2 id="qt">Chiqib ketasizmi?</h2><p>${SES.quitNote||'Bu mashg\'ulotdagi natija saqlanmaydi.'}</p><div class="actions"><button type="button" class="btn" data-act="stay">Davom etaman</button><button type="button" class="btn ghost" data-act="leave">Chiqish</button></div></div>`;$('.play').appendChild(o);$('[data-act=stay]',o).focus();
   PLAY.stay=()=>o.remove();PLAY.leave=()=>{stopSession();location.hash=back}}
 };
 function playKey(e){const s=SES;if(!s||$('.overlay'))return;const t=e.target;
@@ -865,23 +919,24 @@ function finish(){const s=SES;if(!s)return;stopSession();const secs=Math.round((
 <div class="stats"><div class="stat xp"><b data-count="${gained}">+0</b><span>XP</span></div><div class="stat"><b>${acc}%</b><span>Aniqlik</span></div><div class="stat"><b>${fmt(secs)}</b><span>Vaqt</span></div><div class="stat">${s.silent?`<b>${s.correct}/${s.answered}</b><span>To'g'ri javob</span>`:`<b>${s.maxCombo}</b><span>Eng uzun seriya</span>`}</div></div>
 ${r.extra||''}${s.sureN?`<div class="banner calib"><span class="big-n">${s.sureOk}/${s.sureN}</span><div><b>Ishonch garovi</b><p>${s.sureOk===s.sureN?'Ishonchingiz o\'rinli! Nimani bilishingizni aniq sezasiz.':'«Aniq bilaman» degan ba\'zi javoblar xato chiqdi. Garov qo\'yishdan oldin qoidani eslab oling.'}</p></div></div>`:''}${goalHit?`<div class="banner">${ring(1,1)}<div><b>Kunlik maqsad bajarildi!</b><p>${S.goal} XP · seriya: ${streak()} kun</p></div></div>`:''}
 ${nb.length?`<h2 style="margin-top:22px">Yangi nishon!</h2><div class="new-badges">${nb.map(badgeHTML).join('')}</div>`:''}
-<div class="actions">${r.buttons||''}<a class="btn big ghost" href="#">Xaritaga</a></div></div>`;
+<div class="actions">${r.buttons||''}<a class="btn big ghost" href="#">${AS?'Topshiriqlar':'Xaritaga'}</a></div></div>`;
  const c=$('[data-count]');const tgt=+c.dataset.count;if(RM)c.textContent='+'+tgt;else{let v=0;const inc=Math.max(1,Math.ceil(tgt/30));const iv=setInterval(()=>{v=Math.min(tgt,v+inc);c.textContent='+'+v;if(v>=tgt)clearInterval(iv)},30)}
  if(!r.sad){sfx.win();if(perfect||goalHit||nb.length||r.big)confetti()}else sfx.lose();
  CUR={act:r.act||{},key:e=>{if(e.key==='Enter'&&e.target===document.body){const b=$('.result .actions .btn');if(b){b.click();e.preventDefault()}}}};window.scrollTo(0,0)}
-function fail(){const s=SES;stopSession();addXP(s.xp);save();
+function fail(){const s=SES;stopSession();if(s.onFail)s.onFail(s);addXP(s.xp);save();
  app.innerHTML=`<div class="wrap center result">${mascot('sad','Jonlar tugadi. Lekin har bir xato ham saboq!')}<h1>Bu safar bo'lmadi</h1><p class="sub">${s.correct} ta to'g'ri javob · +${s.xp} XP</p>
 <ul class="rules"><li>Xato savollar "Xatolar" bo'limiga tushdi.</li><li>Unitlarni yana bir marta o'ynab, keyin qayta urinib ko'ring.</li></ul>
 <div class="actions"><button type="button" class="btn big" data-act="retry">Qayta urinish</button><a class="btn big ghost" href="${s.back||'#'}">Orqaga</a></div></div>`;
  sfx.lose();CUR={act:{retry:()=>s.retry?s.retry():route()},key:null}}
 
 /* ---------- modes ---------- */
-function playUnit(n,L){const u=U(n);if(!u)return home();
- startSession({mode:'unit',qs:unitQuestions(u,L),requeue:true,hints:true,bet:true,back:'#u-'+n,onDone:()=>{const prev=crowns(n),got=L>prev;if(got)S.crowns[n]=L;const ns=nextStop();
-  const buttons=L<3?`<a class="btn big" href="#play-u-${n}-${L+1}">Keyingi: ${L+1}-daraja</a>${L===1?`<a class="btn big ghost" href="${stopHref(ns)}">Keyingi bekat</a>`:''}`:`<a class="btn big" href="${stopHref(ns)}">Keyingi bekat</a>`;
+function playUnit(n,L){const u=U(n);if(!u)return goHome();
+ startSession({mode:'unit',qs:unitQuestions(u,L),requeue:true,hints:true,bet:true,back:'#u-'+n,onDone:(s,acc)=>{const prev=crowns(n),got=L>prev;if(got)S.crowns[n]=L;const ns=nextStop(),lk=n+'-'+L;S.lv[lk]=Math.max(S.lv[lk]??0,acc);
+  const nxL=AS?[1,2,3].find(k=>k>L&&AS.parts.includes(''+k)):L+1;
+  const buttons=AS?(nxL?`<a class="btn big" href="#play-u-${n}-${nxL}">Keyingi: ${nxL}-daraja</a>`:AS.parts.includes('t')&&!(n in S.tests)?`<a class="btn big" href="#test-u-${n}">Unit ${n} testi</a>`:''):L<3?`<a class="btn big" href="#play-u-${n}-${L+1}">Keyingi: ${L+1}-daraja</a>${L===1?`<a class="btn big ghost" href="${stopHref(ns)}">Keyingi bekat</a>`:''}`:`<a class="btn big" href="${stopHref(ns)}">Keyingi bekat</a>`;
   return{title:`${L}-daraja tugadi!`,sub:`Unit ${n}: ${h(u.t)}`,extra:got?`<div class="banner">${crownRow(L)}<div><b>Yangi toj!</b><p>Unit ${n}: ${L} / 3 toj</p></div></div>`:'',buttons,big:got&&L===3}}})}
 function bossQs(i){const qs=[];legUnits(i).forEach(n=>{const u=U(n),g=pick(range(u.gaps.length),2),m=pick(range(u.mc.length),2);qs.push(qMC(u,m[0]),qSpot(u,m[1]),qOrder(u,rnd(u.ord.length)),qGapBank(u,g[0]),u.k==='v'?qWord(u,rnd(u.W.length),'en'):qType(u,g[1]))});return shuffle(qs)}
-function bossIntro(i){const c=CITIES[i];if(!c)return home();const[a,b,d]=legUnits(i);
+function bossIntro(i){const c=CITIES[i];if(!c)return goHome();const[a,b,d]=legUnits(i);
  intro({eyebrow:`Review ${i+1} · Boss jangi`,title:`${c.name} darvozasi`,sub:`Unitlar ${a}, ${b} va ${d} takrori`,bubble:'Darvozadan o\'tish uchun bossni yenging!<small>Beat the boss to enter the city.</small>',
   rules:['Dev jonini 0 ga tushiring: har to\'g\'ri javob zarba, 3 va 5 ketma-ket javobda zarba kuchayadi','Savollar 3 ta unitdan aralash, «Xatoni top» ham bor','3 ta jon. 50/50 va +1 jon kuchlaridan foydalaning (ularni 5 ketma-ket to\'g\'ri javob uchun olasiz)','G\'alaba: shahar muhri, +50 XP va shahar sahnasi'],extra:`<p><a href="#print-r-${i+1}">Review ${i+1} ning qog'oz varianti</a></p>`,back:`#leg-${i}`,start:()=>playBoss(i)})}
 function playBoss(i){const c=CITIES[i];startSession({mode:'boss',qs:bossQs(i),hearts:3,powers:true,boss:`${c.uz} devi`,back:`#leg-${i}`,retry:()=>playBoss(i),onDone:(s,acc)=>{const firstWin=!S.boss[i];S.boss[i]=Math.max(S.boss[i]||0,acc||1);
@@ -906,7 +961,7 @@ const copyAct=()=>({copy:b=>{const t=$('.share-box');const sel=()=>{t.select();b
 function playDaily(){startSession({mode:'daily',qs:dailyQs(),clock:true,bet:true,back:'#',onDone:(s,acc,secs)=>{const d=dayKey(),first=!S.daily[d];if(first)S.daily[d]={c:s.correct,t:secs};
  const txt=`Destination A2 · Kunlik chaqiruv ${d}: ${s.correct}/10, ${fmt(secs)}`;
  return{bonus:first?30:0,title:`${s.correct} / 10`,sub:first?'Bugungi natija saqlandi':'Mashq uchun o\'yin (natija o\'zgarmadi)',extra:`<div class="card" style="text-align:left"><h2>Sinfdoshlarga yuboring</h2>${shareBox(txt)}</div>`,act:copyAct(),buttons:''}}})}
-function blitzPool(){const started=UNITS.filter(u=>crowns(u.n));return started.length>=2?started:UNITS.slice(0,6)}
+function blitzPool(){if(AS)return asUnits();const started=UNITS.filter(u=>crowns(u.n));return started.length>=2?started:UNITS.slice(0,6)}
 function blitzIntro(){intro({eyebrow:'60 soniya',title:'Blitz',sub:S.blitz?`Rekordingiz: ${S.blitz} ta to'g'ri javob`:'Birinchi rekordni o\'rnating!',bubble:'Tez bo\'ling, lekin shoshmang!<small>Fast, but careful.</small>',
  rules:['60 soniyada iloji boricha ko\'p savol','Variantni bosishingiz bilan javob tekshiriladi','Savollar siz boshlagan unitlardan olinadi','5 ketma-ket to\'g\'ri javob 50/50 kuchini beradi'],start:playBlitz})}
 function playBlitz(){const pool=blitzPool();startSession({mode:'blitz',instant:true,timer:60,powers:true,back:'#',gen:()=>{const u=any(pool);return u.k==='v'&&RNG()<.4?qWord(u,rnd(u.W.length),RNG()<.5?'uz':'en'):qMC(u,rnd(u.mc.length))},
@@ -919,8 +974,8 @@ function playMistakes(){const due=shuffle(dueKeys()),rest=Object.keys(S.mistakes
  startSession({mode:'mistakes',qs,hints:true,bet:true,back:'#',onDone:s=>({title:'Takrorlash yakunlandi!',sub:`${s.correct} / ${s.answered} to'g'ri · bugun qoldi: ${dueKeys().length} · jami: ${mistakeCount()}`,buttons:dueKeys().length?`<a class="btn big" href="#mistakes">Davom etish</a>`:''})})}
 
 /* ---------- story scenes: choose-your-reply dialogues with a speaking finale ---------- */
-function scene(i){const sc=SCENES[i],c=CITIES[i];if(!sc)return home();let li=0,firstOk=0,tries=0,left=45,tick=null;
- app.innerHTML=`<div class="wrap scene-v">${topbar()}<a class="back" href="#leg-${i}">${I.back}Xarita</a>
+function scene(i){const sc=SCENES[i],c=CITIES[i];if(!sc)return goHome();let li=0,firstOk=0,tries=0,left=45,tick=null;
+ app.innerHTML=`<div class="wrap scene-v">${topbar()}<a class="back" href="${AS?'#':`#leg-${i}`}">${I.back}${AS?'Topshiriqlar':'Xarita'}</a>
 <header class="unit-head v"><p class="eyebrow">Sahna ${i+1} · ${c.name}</p><h1>${h(sc.title)}</h1><p class="scene-intro">${h(sc.intro)}</p><span class="scene-step"></span></header>
 <section class="chat" aria-live="polite"></section><section class="replies"></section></div>`;
  const chat=$('.chat'),rep=$('.replies');
@@ -941,25 +996,29 @@ function scene(i){const sc=SCENES[i],c=CITIES[i];if(!sc)return home();let li=0,f
  function selfcheck(){clearInterval(tick);$('#selfcheck').hidden=false;$$('[data-act=go],[data-act=skip]').forEach(x=>x.hidden=true)}
  function done(){clearInterval(tick);const checks=$$('#selfcheck input:checked').length,stars=firstOk>=5?3:firstOk>=4?2:firstOk>=3?1:0,xp=firstOk*10+checks*5,prev=S.scenes[i];
   S.scenes[i]=Math.max(prev||0,stars);addXP(xp);S.stats.sessions++;const nb=checkBadges({hour:new Date().getHours()});save();
-  const nx=i===6?'#exam-1':i<13?`#play-u-${3*i+4}-1`:'#exam-2';
+  const nx=AS?'#':i===6?'#exam-1':i<13?`#play-u-${3*i+4}-1`:'#exam-2';
   app.innerHTML=`<div class="wrap center result">${mascot('cheer',stars===3?'Ajoyib suhbat! Siz haqiqiy sayyohsiz!':'Yaxshi suhbat! Yana o\'ynasangiz, yulduzlar ko\'payadi.')}<h1>Sahna yakunlandi!</h1><p class="sub">${h(sc.title)} · birinchi urinishda ${firstOk}/5 to'g'ri</p>
 <p class="res-stars" aria-label="${stars} / 3 yulduz">${[1,2,3].map(k=>`<span class="${k<=stars?'':'off'}">${I.crown}</span>`).join('')}</p><div class="stats"><div class="stat xp"><b>+${xp}</b><span>XP</span></div><div class="stat"><b>${firstOk}/5</b><span>Birinchi urinish</span></div><div class="stat"><b>${checks}/3</b><span>O'z-o'zini tekshirish</span></div><div class="stat"><b>${stars}</b><span>Yulduz</span></div></div>
-${nb.length?`<h2 style="margin-top:22px">Yangi nishon!</h2><div class="new-badges">${nb.map(badgeHTML).join('')}</div>`:''}<div class="actions"><a class="btn big" href="${nx}">${i===6||i===13?'Aeroportga':'Keyingi shahar'}</a><a class="btn big ghost" href="#">Xaritaga</a></div></div>`;
+${nb.length?`<h2 style="margin-top:22px">Yangi nishon!</h2><div class="new-badges">${nb.map(badgeHTML).join('')}</div>`:''}<div class="actions">${AS?`<a class="btn big" href="#">Topshiriqlar</a>`:`<a class="btn big" href="${nx}">${i===6||i===13?'Aeroportga':'Keyingi shahar'}</a><a class="btn big ghost" href="#">Xaritaga</a>`}</div></div>`;
   sfx.win();if(stars===3)confetti();CUR={act:{},key:null};window.scrollTo(0,0)}
  CUR={act:{rep:choose,go:b=>{b.disabled=true;left=45;tick=setInterval(()=>{left--;const t=$('.t45');if(t)t.textContent=left;if(left<=0){sfx.combo();selfcheck()}},1000)},skip:selfcheck,done},
   key:e=>{if(/^[1-3]$/.test(e.key)){const b=$$('.replies .opt')[+e.key-1];if(b)choose(b)}}};
  npc()}
 
 /* ---------- unit tests ---------- */
-function testIntro(n){const u=U(n);if(!u)return home();const best=S.tests[n];
+function testIntro(n){const u=U(n);if(!u)return goHome();const best=S.tests[n],left=attemptsLeft(n);
  intro({eyebrow:`Unit ${n} · ${u.k==='v'?'Lug\'at':'Grammatika'}`,title:`Unit ${n} testi`,sub:h(u.t),bubble:'Test paytida javoblar ko\'rsatilmaydi. Diqqat bilan o\'qing!<small>No hints during the test. Read carefully.</small>',
-  rules:['20 ta savol: 15 ta variantli, 5 ta yozma','Mashqda uchramagan yangi savollar','Javoblar va baho test oxirida ko\'rsatiladi','70% va undan yuqori: test topshirildi · +30 XP'],
-  extra:`${best!=null?`<p class="sub">Eng yaxshi natijangiz: ${best}% · baho ${gradeOf(best)[0]}</p>`:''}<p><a href="#print-u-${n}">Qog'oz varianti (javoblar kaliti bilan)</a></p>`,back:`#u-${n}`,start:()=>playTest(n)})}
+  rules:['20 ta savol: 15 ta variantli, 5 ta yozma','Mashqda uchramagan yangi savollar','Javoblar va baho test oxirida ko\'rsatiladi','70% va undan yuqori: test topshirildi · +30 XP',...(AS?[AS.att?`Urinishlar: ${left} / ${AS.att} qoldi. Boshlangan urinish hisoblanadi`:'Urinishlar cheklanmagan, o\'qituvchi birinchi urinish natijasini ham ko\'radi']:[])],
+  extra:`${best!=null?`<p class="sub">Eng yaxshi natijangiz: ${best}% · baho ${gradeOf(best)[0]}</p>`:''}${AS?'':`<p><a href="#print-u-${n}">Qog'oz varianti (javoblar kaliti bilan)</a></p>`}`,back:`#u-${n}`,disabled:left===0,cta:left===0?'Urinishlar tugadi':null,start:()=>playTest(n)})}
+const attemptsLeft=n=>AS&&AS.att?Math.max(0,AS.att-(S.tries[n]||0)):null;
 const testQs=u=>shuffle([...u.test.map((_,i)=>qMC(u,i,'t')),...u.tx.map((_,i)=>qMC(u,i,'x')),...u.tg.map((_,i)=>qTestGap(u,i))]);
-function playTest(n){const u=U(n);startSession({mode:'test',silent:true,qs:testQs(u),clock:true,back:`#u-${n}`,onDone:(s,acc)=>{const pass=acc>=70,first=pass&&!(S.tests[n]>=70);S.tests[n]=Math.max(S.tests[n]??0,acc);const ns=nextStop();
+function playTest(n){const u=U(n);if(!u||attemptsLeft(n)===0)return testIntro(n);
+ if(AS){S.tries[n]=(S.tries[n]||0)+1;save()} // an attempt counts once it starts
+ startSession({mode:'test',silent:true,qs:testQs(u),clock:true,back:`#u-${n}`,quitNote:AS&&AS.att?'Bu urinish hisoblanadi, natija esa saqlanmaydi.':null,onDone:(s,acc)=>{const pass=acc>=70,first=pass&&!(S.tests[n]>=70);S.tests[n]=Math.max(S.tests[n]??0,acc);if(S.firstT[n]==null)S.firstT[n]=acc;const ns=nextStop(),left=attemptsLeft(n);
+ const again=left!==0?`<button type="button" class="btn big" data-act="again">Qayta topshirish${left?` (${left} ta qoldi)`:''}</button>`:'';
  return{bonus:first?30:0,sad:!pass,big:pass,title:`Unit ${n} testi: ${s.correct} / ${s.total}`,sub:h(u.t),bubble:pass?'Test topshirildi! Barakalla!':'Xatolarni ko\'rib chiqing va yana urinib ko\'ring.',
-  extra:gradeBanner(acc)+reviewList(s.log||[]),act:{again:()=>playTest(n)},
-  buttons:pass?`<a class="btn big" href="${stopHref(ns)}">Keyingi bekat</a>`:`<button type="button" class="btn big" data-act="again">Qayta topshirish</button><a class="btn big ghost" href="#u-${n}">Mashq qilish</a>`}}})}
+  extra:gradeBanner(acc)+reviewList(s.log||[],left>0),act:{again:()=>playTest(n)},
+  buttons:AS?(pass?'':again+`<a class="btn big ghost" href="#u-${n}">Mashq qilish</a>`):pass?`<a class="btn big" href="${stopHref(ns)}">Keyingi bekat</a>`:`${again}<a class="btn big ghost" href="#u-${n}">Mashq qilish</a>`}}})}
 
 /* ---------- printable tests (same questions every time, with an answer key) ---------- */
 function printItems(kind,id){RNG=seeded('print-'+kind+id);let mcs=[],gps=[],title,sub;
@@ -967,7 +1026,7 @@ function printItems(kind,id){RNG=seeded('print-'+kind+id);let mcs=[],gps=[],titl
  else if(kind==='r'){legUnits(id-1).forEach(n=>{const u=U(n);mcs.push(...pick(u.mc,3));gps.push(...pick(u.gaps,2))});title=`Review ${id}`;sub=`Units ${3*id-2}, ${3*id-1} and ${3*id}`}
  else{const from=id===1?1:22;const pool=[];for(let n=from;n<from+21;n++){const u=U(n);pool.push(...u.test,...u.tx)}mcs=pick(pool,30);title=`Progress Test ${id}`;sub=`Units ${from}–${from+20}`}
  mcs=shuffle(mcs).map(([q,o])=>({q,opts:shuffle(o),ans:o[0]}));gps=shuffle(gps).map(([q,a])=>({q,ans:a}));RNG=Math.random;return{title,sub,mcs,gps}}
-function printView(kind,id){if((kind==='u'&&!U(id))||(kind==='r'&&!(id>=1&&id<=14))||(kind==='p'&&id!==1&&id!==2))return home();
+function printView(kind,id){if((kind==='u'&&!U(id))||(kind==='r'&&!(id>=1&&id<=14))||(kind==='p'&&id!==1&&id!==2))return goHome();
  const d=printItems(kind,id),L='abc',line=q=>h(q).replace('___','<span class="pl"></span>'),total=d.mcs.length+d.gps.length;
  const back=kind==='u'?`#u-${id}`:kind==='r'?`#boss-${id-1}`:`#exam-${id}`;
  app.innerHTML=`<div class="wrap print"><div class="actions no-print"><button type="button" class="btn" data-act="print">Chop etish</button><a class="btn ghost" href="${back}">Orqaga</a></div>
@@ -980,12 +1039,12 @@ ${d.gps.length?`<h2>B. Complete the sentences. <small>Gaplarni to'ldiring.</smal
  CUR={act:{print:()=>{try{window.print()}catch(e){}}},key:null}}
 
 /* ---------- word games (ideas from Destination-B1-quizes): memory, scramble, hidden word, survival ---------- */
-function wordPool(){const vs=UNITS.filter(u=>u.k==='v'),st=vs.filter(u=>crowns(u.n)),src=st.length?st:vs.slice(0,3);return src.flatMap(u=>u.W.map(w=>({en:w[0],uz:w[1],ex:w[2],n:u.n})))}
+function wordPool(){const vs=(AS?asUnits():UNITS).filter(u=>u.k==='v'),st=vs.filter(u=>crowns(u.n)),src=st.length?st:vs.slice(0,3);return src.flatMap(u=>u.W.map(w=>({en:w[0],uz:w[1],ex:w[2],n:u.n})))}
 const GAMES=[['memory','Xotira','Kartalarni ochib, inglizcha so\'z va o\'zbekcha ma\'noni juftlang',I.cards],['scramble','Harf jumbog\'i','Aralash harflardan so\'zni yig\'ing',I.abc],
  ['hidden','Yashirin so\'z','O\'zbekcha ma\'nodan so\'zni harfma-harf toping, 6 ta jon',I.eye],['survival','Omon qolish','3 ta jon, vaqt yo\'q: qancha chidaysiz?',I.heart]];
 const G={};
 function gamesHub(){const started=UNITS.some(u=>u.k==='v'&&crowns(u.n));
- app.innerHTML=`<div class="wrap">${topbar()}<a class="back" href="#">${I.back}Xarita</a><h1 class="page-h">O'yinlar</h1><p class="sub">${started?'Siz boshlagan lug\'at unitlaridagi so\'zlar bilan.':'Hozircha 3, 6 va 9-unit so\'zlari. Lug\'at unitlarini o\'ynasangiz, o\'yinlar ularning so\'zlarini oladi.'}</p>
+ app.innerHTML=`<div class="wrap">${topbar()}<a class="back" href="#">${I.back}${AS?'Topshiriqlar':'Xarita'}</a><h1 class="page-h">O'yinlar</h1><p class="sub">${AS?'Topshiriqdagi lug\'at unitlarining so\'zlari bilan. Kamida 2 ta o\'yinni o\'ynang.':started?'Siz boshlagan lug\'at unitlaridagi so\'zlar bilan.':'Hozircha 3, 6 va 9-unit so\'zlari. Lug\'at unitlarini o\'ynasangiz, o\'yinlar ularning so\'zlarini oladi.'}</p>
 <div class="ghub">${GAMES.map(([id,t,d,ic])=>{const r=S.games[id];return`<a class="gcard g-${id}" href="#g-${id}"><span class="gic">${ic}</span><b>${t}</b><span>${d}</span><small>${r?`Rekord: ${r.best}${id==='memory'?' yulduz':''} · ${r.plays} marta`:'Hali o\'ynalmagan'}</small></a>`}).join('')}</div></div>`;
  CUR={act:{},key:null}}
 function gameTop(t,d){return`${topbar()}<a class="back" href="#games">${I.back}O'yinlar</a><header class="g-head"><h1>${t}</h1><p>${d}</p></header>`}
@@ -1070,7 +1129,7 @@ const BADGES=[
  ['sure10','×2','O\'zini biladi','«Aniq bilaman» bilan 10 ta to\'g\'ri javob',()=>S.sure.ok>=10],
  ['arcade','4G','O\'yinchi','4 ta o\'yinning hammasini o\'ynash',()=>GAMES.every(g=>S.games[g[0]])],
  ['survive15','15','Chidamli','Omon qolishda 15+ to\'g\'ri',()=>(S.games.survival||{}).best>=15]];
-function checkBadges(ctx){const got=[];BADGES.forEach(b=>{if(!S.badges[b[0]]&&b[4](ctx||{})===true){S.badges[b[0]]=dayKey();got.push(b)}});return got}
+function checkBadges(ctx){const got=[];if(AS)return got;BADGES.forEach(b=>{if(!S.badges[b[0]]&&b[4](ctx||{})===true){S.badges[b[0]]=dayKey();got.push(b)}});return got}
 const badgeHTML=b=>`<div class="badge ${S.badges[b[0]]?'':'locked'}"><span class="medal">${b[1]}</span><b>${b[2]}</b><span class="desc">${b[3]}</span></div>`;
 
 /* ---------- profile ---------- */
@@ -1090,6 +1149,7 @@ function profile(){const L=levelOf(S.xp),a=lvStart(L),b=lvStart(L+1),st=S.stats;
 <div class="setting"><b>Kunlik maqsad</b><span class="seg">${[20,50,100].map(g=>`<button type="button" data-act="goal" data-g="${g}" aria-pressed="${S.goal===g}">${g} XP</button>`).join('')}</span></div>
 <div class="setting"><b>Ovoz effektlari</b><span class="seg"><button type="button" data-act="sound" data-v="1" aria-pressed="${S.sound}">Yoqilgan</button><button type="button" data-act="sound" data-v="0" aria-pressed="${!S.sound}">O'chiq</button></span></div>
 <div class="setting"><b>Ko'rinish</b><span class="seg"><button type="button" data-act="theme" data-v="" aria-pressed="${!theme}">Tizim</button><button type="button" data-act="theme" data-v="light" aria-pressed="${theme==='light'}">Yorug'</button><button type="button" data-act="theme" data-v="dark" aria-pressed="${theme==='dark'}">Qorong'i</button></span></div></section>
+<section class="card"><h2>O'qituvchi bo'limi</h2><p class="note">O'quvchilarga faqat tanlangan unitlar, testlar va o'yinlardan iborat alohida fayl yarating va ularning natijalarini tekshiring.</p><a class="btn ghost" href="#teacher">Topshiriq yaratish</a></section>
 <section class="card"><h2>Boshqa qurilmaga ko'chirish</h2><p class="note">Progress faqat shu brauzerda saqlanadi. Kodni olib, boshqa qurilmada shu maydonga qo'ying va "Kodni kiritish"ni bosing.</p>
 <label class="sr" for="code">Progress kodi</label><textarea class="code" id="code" placeholder="Progress kodi"></textarea><div class="actions"><button type="button" class="btn ghost" data-act="export">Kodni olish</button><button type="button" class="btn ghost" data-act="import">Kodni kiritish</button></div><p class="note" id="code-msg" role="status"></p></section>
 <section class="card"><h2>Boshidan boshlash</h2><p class="note">Barcha progress, XP va nishonlar o'chiriladi.</p><button type="button" class="btn bad" data-act="reset">Progressni o'chirish</button></section></div>`;
@@ -1100,8 +1160,144 @@ function profile(){const L=levelOf(S.xp),a=lvStart(L),b=lvStart(L+1),st=S.stats;
   import:()=>{try{const o=JSON.parse(decodeURIComponent(escape(atob($('#code').value.trim()))));if(!o||typeof o!=='object'||typeof o.xp!=='number')throw 0;S=load(o);save();msg('Progress tiklandi.');setTimeout(profile,700)}catch(e){msg('Kod noto\'g\'ri. Uni boshidan oxirigacha to\'liq nusxalang.')}},
   reset:b=>{if(b.dataset.sure){S=FRESH();save();location.hash='';route();toast('Progress o\'chirildi')}else{b.dataset.sure=1;b.textContent='Rostdan ham o\'chirasizmi? Yana bosing'}}},key:null}}
 
+/* ---------- assignments: the teacher picks units and tasks, the student gets a file with only those ---------- */
+// The result text ends with a code: a hash of the lines plus the assignment's secret. It catches an edited
+// result text; it cannot stop a student who edits the browser's storage, so it is a check, not a lock.
+const HDR='Destination A2 · Topshiriq natijasi';
+const PARTS=[['1','1-daraja · Tanishuv','Variant tanlash va gap tuzish',1],['2','2-daraja · Mashq','Tinglash, xatoni topish, so\'z banki',1],['3','3-daraja · Usta','Javobni o\'zi yozadi, diktant',0],
+ ['t','Unit testi','20 savol, 5 baholik baho',1],['r','Review jangi','Tanlangan unitlar aralash, boss jangi',0],['s','Suhbat sahnasi','Shahar dialogi va 45 soniya gapirish',0],['g','So\'z o\'yinlari','Xotira, jumboq, yashirin so\'z · lug\'at uniti kerak',0]];
+function goHome(){return AS?asHome():home()}
+const asUnits=()=>AS.units.map(U).filter(Boolean);
+const legsOf=a=>[...new Set(a.units.map(legOf))];
+const hasVocab=a=>a.units.some(n=>U(n)&&U(n).k==='v');
+const unitRange=us=>{const o=[];us.slice().sort((a,b)=>a-b).forEach(n=>{const l=o[o.length-1];if(l&&l[1]===n-1)l[1]=n;else o.push([n,n])});return o.map(([a,b])=>a===b?a:a+'–'+b).join(', ')};
+const dueTxt=d=>d?d.split('-').reverse().join('.'):'';
+function taskDefs(a){const t=[],p=x=>a.parts.includes(x);
+ a.units.forEach(n=>{['1','2','3'].forEach(L=>{if(p(L))t.push({k:'l',n,L:+L,label:`Unit ${n} · ${L}-daraja`,href:`#play-u-${n}-${L}`})});if(p('t'))t.push({k:'t',n,label:`Unit ${n} testi`,href:`#test-u-${n}`})});
+ if(p('r'))t.push({k:'r',label:'Review jangi',href:'#review'});
+ if(p('s'))legsOf(a).forEach(i=>{if(SCENES[i])t.push({k:'s',i,label:`Sahna: ${SCENES[i].title}`,href:`#scene-${i}`})});
+ if(p('g')&&hasVocab(a))t.push({k:'g',label:'So\'z o\'yinlari',href:'#games'});
+ return t}
+function taskState(d){ // null = not done yet; s = a percentage that counts toward the average
+ if(d.k==='l'){const v=S.lv[d.n+'-'+d.L];return v==null?null:{s:v,txt:v+'%'}}
+ if(d.k==='t'){const v=S.tests[d.n];if(v==null)return null;const f=S.firstT[d.n],tr=S.tries[d.n]||0;return{s:v,txt:`${v}% (baho ${gradeOf(v)[0]})${f!=null&&f!==v?` · 1-urinish ${f}%`:''}${tr?` · ${tr} urinish`:''}`}}
+ if(d.k==='r')return S.rev==null?null:{s:S.rev,txt:`${S.rev}% · dev yengildi`};
+ if(d.k==='s'){const v=S.scenes[d.i];return v==null?null:{txt:`${v}/3 yulduz`}}
+ const pl=GAMES.filter(g=>S.games[g[0]]);return pl.length<2?null:{txt:pl.map(g=>`${g[1]} ${S.games[g[0]].best}`).join(', ')}}
+function pendingTxt(d){if(d.k==='t'&&S.tries[d.n])return`tugatilmagan · ${S.tries[d.n]} urinish`;if(d.k==='r'&&S.revFail)return`dev yengilmadi · ${S.revFail} urinish`;
+ if(d.k==='g'){const k=GAMES.filter(g=>S.games[g[0]]).length;if(k)return`${k}/2 o'yin`}return'bajarilmagan'}
+function sign(lines,sec){const t=lines.map(l=>l.trim()).join('\n').normalize('NFC')+'\n'+sec;let a=2166136261,b=5381;
+ for(let i=0;i<t.length;i++){const c=t.charCodeAt(i);a=Math.imul(a^c,16777619);b=(Math.imul(b,33)^c)>>>0}
+ const f=x=>(x>>>0).toString(36).toUpperCase().padStart(7,'0');return f(a)+'-'+f(b)}
+function asReport(){const rows=taskDefs(AS).map(d=>[d,taskState(d)]),done=rows.filter(r=>r[1]).length,sc=rows.map(r=>r[1]&&r[1].s).filter(v=>v!=null),avg=sc.length?Math.round(sc.reduce((x,y)=>x+y,0)/sc.length):null,d=new Date();
+ const body=[`«${AS.title}» · ID ${AS.id}`,`O'quvchi: ${S.name}`,...rows.map(([t,st])=>`${st?'✓':'✗'} ${t.label}: ${st?st.txt:pendingTxt(t)}`),`Bajarildi: ${done}/${rows.length}${avg!=null?` · o'rtacha ${avg}%`:''}`,`Vaqt: ${dayKey(d)} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`];
+ return{text:[HDR,...body,'Kod: '+sign(body,AS.secret)].join('\n'),done,total:rows.length,rows}}
+
+function asHome(){const r=asReport(),byU={},late=AS.due&&dayKey()>AS.due;r.rows.forEach(x=>{if(x[0].n)(byU[x[0].n]=byU[x[0].n]||[]).push(x)});const other=r.rows.filter(x=>!x[0].n);
+ const row=([d,st])=>{const out=d.k==='t'&&!st&&attemptsLeft(d.n)===0;return`<li><a class="trow ${st?'done':''}" href="${d.href}"><span class="tk">${st?I.check:out?I.cross:'<i></i>'}</span><span class="tl"><b>${h(d.k==='l'?`${d.L}-daraja: ${LEVELS[d.L].name}`:d.k==='t'?'Unit testi':d.label)}</b><small>${h(st?st.txt:pendingTxt(d))}</small></span><span class="go">${st||out?'Ko\'rish':'Boshlash'}</span></a></li>`};
+ app.innerHTML=`<div class="wrap">${topbar()}
+${PREVIEW?`<div class="banner pv"><div><b>Oldindan ko'rish</b><p>O'quvchi faylni ochganda shunday ko'radi. Bu yerdagi natijalar chiqqaningizda o'chiriladi.</p></div><button type="button" class="btn ghost" data-act="endpv">O'qituvchi sahifasiga</button></div>`:''}
+<header class="as-head"><p class="eyebrow">Topshiriq · Destination A2</p><h1>${h(AS.title)}</h1>${AS.note?`<p class="as-note">${h(AS.note)}</p>`:''}${AS.due?`<p class="due ${late?'late':''}">${I.cal}Muddat: ${dueTxt(AS.due)}${late?' · o\'tib ketgan':''}</p>`:''}</header>
+${S.name?`<section class="card as-prog">${ring(r.done,r.total||1)}<div><b>${r.done} / ${r.total} vazifa bajarildi</b><p>${h(S.name)} · <button type="button" class="linkish" data-act="rename">ismni o'zgartirish</button></p></div></section>
+${Object.keys(byU).map(n=>{const u=U(+n);return`<section class="card as-unit"><div class="au-h"><div><p class="eyebrow">Unit ${n} · ${u.k==='v'?'Lug\'at':'Grammatika'}</p><h2>${h(u.t)}</h2></div><a class="btn ghost" href="#u-${n}">${u.k==='v'?'So\'zlar':'Qoida'}</a></div><ul class="tasks">${byU[n].map(row).join('')}</ul></section>`}).join('')}
+${other.length?`<section class="card"><h2>Yakuniy vazifalar</h2><ul class="tasks">${other.map(row).join('')}</ul></section>`:''}
+${mistakeCount()?`<section class="card"><h2>Xatolar ustida ishlash</h2><p class="note">Ixtiyoriy: xato qilgan savollaringiz qaytadi (jami ${mistakeCount()} ta).</p><a class="btn ghost" href="#mistakes">Takrorlash</a></section>`:''}
+<section class="card send"><h2>Natijani o'qituvchiga yuborish</h2><p class="note">${r.done<r.total?`Yana ${r.total-r.done} ta vazifa qoldi. Istalgan payt yuborish mumkin, lekin hammasini bajarib yuborgan yaxshi.`:'Hamma vazifa bajarildi! Matnni nusxalab, o\'qituvchingizga Telegram yoki SMS orqali yuboring.'}</p>
+<textarea class="share-box" readonly rows="${r.rows.length+10}" aria-label="Natija matni">${h(r.text)}</textarea><button type="button" class="btn ${r.done===r.total?'gold':'ghost'}" data-act="copy">Natijani nusxalash</button><p class="note">Matnni o'zgartirmang: oxiridagi kod natija haqiqiyligini tasdiqlaydi.</p></section>`
+:`<section class="card"><h2>Ismingizni yozing</h2><p class="note">Natija o'qituvchingizga shu ism bilan boradi.</p><form class="name-f" id="name-f"><label class="sr" for="as-name">Familiya va ism</label><input class="text-in" id="as-name" maxlength="40" autocomplete="name" placeholder="Familiya Ism"><button class="btn" type="submit">Boshlash</button></form>
+<p class="note">Topshiriqda: ${r.total} ta vazifa, unitlar ${unitRange(AS.units)}.</p></section>`}
+<footer class="foot">Destination A2 · o'qituvchingiz tayyorlagan topshiriq. Natijalar shu brauzerda saqlanadi.</footer></div>`;
+ const f=$('#name-f');if(f)f.addEventListener('submit',e=>{e.preventDefault();const v=$('#as-name').value.replace(/\s+/g,' ').trim();if(v.length<2){shake($('#as-name'));return}S.name=v;save();sfx.ok();asHome()});
+ CUR={act:Object.assign(copyAct(),{rename:()=>{const old=S.name;S.name='';save();asHome();$('#as-name').value=old;$('#as-name').focus()},
+  endpv:()=>{try{sessionStorage.removeItem('destA2.preview');localStorage.removeItem(KEY)}catch(e){}location.hash='#teacher';location.reload()}}),key:null}}
+
+function mixQs(us,n){const make=[u=>qMC(u,rnd(u.mc.length)),u=>qSpot(u,rnd(u.mc.length)),u=>qOrder(u,rnd(u.ord.length)),u=>qGapBank(u,rnd(u.gaps.length)),u=>u.k==='v'?qWord(u,rnd(u.W.length),'en'):qType(u,rnd(u.gaps.length))];
+ const qs=[],seen=new Set();for(let t=0;qs.length<n&&t<n*8;t++){const u=us[t%us.length],q=make[Math.floor(t/us.length)%5](u);if(!seen.has(q.key)){seen.add(q.key);qs.push(q)}}return shuffle(qs)}
+function reviewIntro(){intro({eyebrow:'Topshiriq · Review',title:'Review jangi',sub:`Unitlar ${unitRange(AS.units)} aralash`,bubble:'Devni yenging: hamma unitlardan aralash savollar!<small>Beat the giant with mixed questions.</small>',
+ rules:['Har to\'g\'ri javob devga zarba beradi, ketma-ket javoblar kuchliroq uradi','3 ta jon, 50/50 va +1 jon kuchlari bor','Dev yengilganda natija topshiriqqa yoziladi'],extra:S.rev!=null?`<p class="sub">Eng yaxshi natija: ${S.rev}%</p>`:'',back:'#',start:playReview})}
+function playReview(){startSession({mode:'boss',qs:mixQs(asUnits(),Math.min(24,Math.max(16,AS.units.length*5))),hearts:3,powers:true,boss:'Takror devi',back:'#',retry:playReview,onFail:()=>{S.revFail++},
+ onDone:(s,acc)=>{S.rev=Math.max(S.rev??0,acc);return{title:'Review: dev yengildi!',sub:`${s.correct} ta to'g'ri javob · ${acc}%`,big:true,buttons:''}}})}
+
+function asRoute(hs){let m;const has=n=>AS.units.includes(n),p=x=>AS.parts.includes(x);
+ if(!S.name)return asHome();
+ if((m=hs.match(/^u-(\d+)$/))&&has(+m[1]))return unitView(+m[1]);
+ if((m=hs.match(/^play-u-(\d+)-([123])$/))&&has(+m[1])&&p(m[2]))return playUnit(+m[1],+m[2]);
+ if((m=hs.match(/^test-u-(\d+)$/))&&has(+m[1])&&p('t'))return testIntro(+m[1]);
+ if(hs==='review'&&p('r'))return reviewIntro();
+ if((m=hs.match(/^scene-(\d+)$/))&&p('s')&&legsOf(AS).includes(+m[1])&&SCENES[+m[1]])return scene(+m[1]);
+ if(p('g')&&hasVocab(AS)){if(hs==='games')return gamesHub();if(hs==='g-memory')return gameMemory();if(hs==='g-scramble')return gameScramble();if(hs==='g-hidden')return gameHidden();if(hs==='g-survival')return survivalIntro()}
+ if(hs==='mistakes')return mistakesIntro();
+ asHome()}
+
+/* The teacher's file: this page's own CSS and JS, only the chosen units, and the assignment config. */
+function assignFile(a){const css=[...document.querySelectorAll('style')].map(x=>x.textContent).find(t=>t.includes('--lapis'));
+ const js=[...document.scripts].map(x=>x.textContent).find(t=>t.includes('function assignFile'));if(!css||!js)throw new Error('source');
+ const legs=legsOf(a),j=o=>JSON.stringify(o).replace(/</g,'\\u003c');
+ const data={units:a.units.map(U),cities:CITIES,scenes:SCENES.map((sc,i)=>a.parts.includes('s')&&legs.includes(i)?sc:null)};
+ const cfg={v:1,id:a.id,title:a.title,note:a.note,due:a.due,units:a.units,parts:a.parts,att:a.att,secret:a.secret};
+ return`<!doctype html><html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>${h(a.title)} · Destination A2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>${css}</style>
+</head><body><div id="app"><noscript><p style="padding:24px">Bu topshiriq uchun JavaScript kerak.</p></noscript></div>
+<script id="a2-data" type="application/json">${j(data)}<\/script>
+<script id="a2-assign" type="application/json">${j(cfg)}<\/script>
+<script>${js}<\/script></body></html>`}
+function download(name,text){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/html;charset=utf-8'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000)}
+const slug=t=>t.toLowerCase().replace(/[ʻʼ'’`‘]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'topshiriq';
+const rid=n=>Array.from(crypto.getRandomValues(new Uint8Array(n)),b=>'abcdefghijkmnpqrstuvwxyz23456789'[b%32]).join('');
+const fileName=a=>`Topshiriq-${slug(a.title)}-${a.id}.html`;
+
+function verifyResults(txt){const blocks=[];let cur=null;
+ txt.split(/\r?\n/).map(l=>l.trim()).filter(Boolean).forEach(l=>{if(l.includes(HDR)){cur={lines:[]};blocks.push(cur)}else if(cur&&cur.code==null){const m=l.match(/^Kod:\s*([A-Z0-9-]+)/i);if(m)cur.code=m[1].toUpperCase();else cur.lines.push(l)}});
+ return blocks.map(b=>{const id=((b.lines[0]||'').match(/ID ([a-z0-9]+)$/)||[])[1],a=id&&S.assigns[id],get=p=>(b.lines.find(l=>l.startsWith(p))||'').slice(p.length).trim();
+  return{id:id||'?',a,name:get('O\'quvchi:')||'—',sum:get('Bajarildi:'),time:get('Vaqt:'),tasks:b.lines.filter(l=>/^[✓✗]/.test(l)),st:!a?'unk':b.code&&b.code===sign(b.lines,a.secret)?'ok':'bad'}})}
+const VST={ok:'✓ Haqiqiy',bad:'✗ O\'zgartirilgan',unk:'? Noma\'lum'};
+function verifyHTML(res){if(!res.length)return`<p class="note">Natija topilmadi. Matnda «${HDR}» qatori bo'lishi kerak.</p>`;const groups={};res.forEach(r=>(groups[r.id]=groups[r.id]||[]).push(r));
+ return Object.entries(groups).map(([id,rs])=>{const a=S.assigns[id],ok=rs.filter(r=>r.st==='ok').length;return`<div class="vgroup"><h3>${a?h(a.title):'Noma\'lum topshiriq'} <small>ID ${h(id)} · ${rs.length} ta natija · ${ok} ta haqiqiy</small></h3>${a?'':'<p class="note">Bu topshiriq shu brauzerda yaratilmagan, shuning uchun kodni tekshirib bo\'lmaydi. Topshiriqni yaratgan qurilmada tekshiring.</p>'}
+<div class="vtable-w"><table class="vtable"><thead><tr><th>O'quvchi</th><th>Bajarildi</th><th>Yuborilgan</th><th>Holat</th></tr></thead><tbody>${rs.sort((x,y)=>x.name.localeCompare(y.name)).map(r=>`<tr><td><details><summary>${h(r.name)}</summary><ul>${r.tasks.map(t=>`<li>${h(t)}</li>`).join('')}</ul></details></td><td>${h(r.sum)}</td><td>${h(r.time)}</td><td><span class="vst ${r.st}">${VST[r.st]}</span></td></tr>`).join('')}</tbody></table></div></div>`}).join('')
+ +`<div class="actions"><button type="button" class="btn ghost" data-act="tsv">Jadvalni nusxalash (Excel uchun)</button></div><textarea class="share-box" id="tsv" rows="4" readonly hidden aria-label="Jadval"></textarea>`}
+
+function teacher(msgText){const saved=Object.values(S.assigns).sort((a,b)=>b.made-a.made);let att=2,res=[];
+ app.innerHTML=`<div class="wrap teacher">${topbar()}<a class="back" href="#">${I.back}Xarita</a>
+<p class="eyebrow" style="margin-top:8px">O'qituvchi bo'limi</p><h1 class="page-h">Topshiriq yaratish</h1><p class="sub">O'quvchiga butun o'yinni emas, faqat siz tanlagan unit va vazifalarni bering.</p>
+<ol class="how"><li><b>1. Tanlang</b>unitlar, vazifalar, muddat</li><li><b>2. Yuboring</b>tayyor HTML faylni Telegram orqali</li><li><b>3. Tekshiring</b>o'quvchi natija matnini qaytaradi, kod uni tasdiqlaydi</li></ol>
+<section class="card"><h2>Unitlar</h2><div class="legs-pick">${CITIES.map((c,i)=>`<fieldset class="lp"><legend>${i+1}. ${h(c.name)}<button type="button" class="mini" data-act="legall" data-i="${i}">hammasi</button></legend>${legUnits(i).map(n=>{const u=U(n);return`<label class="ck"><input type="checkbox" name="u" value="${n}"><span><b>${n}.</b> ${h(u.t)} <i class="kd ${u.k}">${u.k==='v'?'lug\'at':'grammatika'}</i></span></label>`}).join('')}</fieldset>`).join('')}</div></section>
+<section class="card"><h2>Vazifalar</h2><div class="parts">${PARTS.map(p=>`<label class="ck big"><input type="checkbox" name="p" value="${p[0]}" ${p[3]?'checked':''}><span><b>${p[1]}</b><small>${p[2]}</small></span></label>`).join('')}</div>
+<div class="setting"><b>Unit testiga urinishlar</b><span class="seg">${[1,2,3,0].map(v=>`<button type="button" data-act="att" data-v="${v}" aria-pressed="${v===att}">${v||'Cheklanmagan'}</button>`).join('')}</span></div>
+<p class="note">Urinishlar qolganda o'quvchi to'g'ri javoblarni ko'rmaydi, faqat qaysi savolda xato qilganini ko'radi. Qoida va so'zlar sahifasi har doim ochiq.</p></section>
+<section class="card"><h2>Nom va muddat</h2><label class="fl" for="as-title">Topshiriq nomi</label><input class="text-in" id="as-title" maxlength="60" value="Uy vazifasi">
+<label class="fl" for="as-due">Muddat (ixtiyoriy)</label><input class="text-in" type="date" id="as-due">
+<label class="fl" for="as-note">O'quvchiga izoh (ixtiyoriy)</label><textarea class="text-in" id="as-note" rows="2" maxlength="300" placeholder="Masalan: 1 va 2-darajani bajaring, keyin testni topshiring."></textarea></section>
+<section class="card make"><p class="sum" id="as-sum" role="status"></p><div class="actions"><button type="button" class="btn big gold" data-act="mkfile">Faylni yaratish</button><button type="button" class="btn big ghost" data-act="preview">Oldindan ko'rish</button></div>
+<p class="note" id="as-msg" role="status">${msgText||''}</p><p class="note">Fayl ichida faqat tanlangan unitlar bor: boshqa unitlar, javoblar kaliti va qog'oz variantlari yo'q. O'quvchi faylni telefonda Chrome yoki boshqa brauzer bilan ochadi, internet shart emas.</p></section>
+${saved.length?`<section class="card"><h2>Yaratilgan topshiriqlar</h2><ul class="as-list">${saved.map(a=>`<li><div><b>${h(a.title)}</b><small>Unitlar ${unitRange(a.units)} · ${taskDefs(a).length} ta vazifa${a.parts.includes('t')?` · test: ${a.att?a.att+' urinish':'cheklanmagan'}`:''}${a.due?` · muddat ${dueTxt(a.due)}`:''} · ID ${a.id}</small></div><span class="actions"><button type="button" class="btn ghost" data-act="redl" data-id="${a.id}">Yana yuklab olish</button><button type="button" class="btn ghost" data-act="del" data-id="${a.id}">O'chirish</button></span></li>`).join('')}</ul></section>`:''}
+<section class="card"><h2>Natijalarni tekshirish</h2><p class="note">O'quvchilar yuborgan natija matnlarini shu yerga qo'ying. Bir nechtasini birga qo'ysangiz, sinf jadvali chiqadi.</p>
+<label class="sr" for="as-res">Natija matnlari</label><textarea class="code" id="as-res" rows="6" placeholder="${HDR} …"></textarea><div class="actions"><button type="button" class="btn" data-act="verify">Tekshirish</button></div><div id="as-out" aria-live="polite"></div></section></div>`;
+ const msg=t=>{$('#as-msg').textContent=t};
+ function readForm(quiet){const units=$$('input[name=u]:checked').map(x=>+x.value),vocab=units.some(n=>U(n).k==='v'),parts=$$('input[name=p]:checked').map(x=>x.value).filter(p=>p!=='g'||vocab);
+  if(!units.length||!parts.length){if(!quiet)msg(units.length?'Kamida bitta vazifani belgilang.':'Kamida bitta unitni belgilang.');return null}
+  return{title:$('#as-title').value.replace(/\s+/g,' ').trim()||'Uy vazifasi',note:$('#as-note').value.trim(),due:$('#as-due').value||'',units,parts,att}}
+ const upd=()=>{const a=readForm(true),gOff=$$('input[name=p][value=g]:checked').length&&!(a&&a.parts.includes('g'));
+  $('#as-sum').innerHTML=a?`<b>${a.units.length} ta unit · ${taskDefs(a).length} ta vazifa</b>${gOff?'<small>So\'z o\'yinlari uchun kamida bitta lug\'at unitini tanlang.</small>':''}`:'<b>Unit va vazifalarni tanlang</b>'};
+ $('.teacher').addEventListener('change',upd);upd();
+ CUR={act:{legall:b=>{const bx=$$('input',b.closest('fieldset')),on=!bx.every(x=>x.checked);bx.forEach(x=>x.checked=on);upd()},
+  att:b=>{att=+b.dataset.v;$$('[data-act=att]').forEach(x=>x.setAttribute('aria-pressed',x===b))},
+  mkfile:()=>{const a=readForm();if(!a)return;a.id=rid(6);a.secret=rid(12);a.made=Date.now();let html;try{html=assignFile(a)}catch(e){return msg('Faylni yaratib bo\'lmadi.')}
+   S.assigns[a.id]=a;save();download(fileName(a),html);sfx.win();teacher(`Fayl tayyor: ${fileName(a)}. Yuklab olinmasa, sahifani (Destination-A2.html) kompyuterda brauzerda ochib qayta yarating.`)},
+  preview:()=>{const a=readForm();if(!a)return;Object.assign(a,{id:'preview',secret:'preview'});try{sessionStorage.setItem('destA2.preview',JSON.stringify(a));localStorage.removeItem('destA2.as.preview');location.hash='';location.reload()}catch(e){msg('Oldindan ko\'rish bu brauzerda ishlamadi.')}},
+  redl:b=>{const a=S.assigns[b.dataset.id];if(a){download(fileName(a),assignFile(a));msg(`Yuklab olindi: ${fileName(a)}`)}},
+  del:b=>{if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Rostdan o\'chirasizmi?';return}delete S.assigns[b.dataset.id];save();teacher('Topshiriq o\'chirildi. Uning natijalarini endi tekshirib bo\'lmaydi.')},
+  verify:()=>{res=verifyResults($('#as-res').value);$('#as-out').innerHTML=verifyHTML(res);if(res.length)sfx.tap()},
+  tsv:b=>{const t=$('#tsv'),head=['O\'quvchi','Topshiriq','Bajarildi','Yuborilgan','Holat','Vazifalar'];
+   t.value=[head,...res.map(r=>[r.name,r.a?r.a.title:r.id,r.sum,r.time,VST[r.st],r.tasks.join(' | ')])].map(x=>x.map(v=>String(v).replace(/\t/g,' ')).join('\t')).join('\n');t.hidden=false;
+   const sel=()=>{t.select();b.textContent='Belgilandi, nusxalang'};try{navigator.clipboard.writeText(t.value).then(()=>{b.textContent='Nusxalandi! Excelga qo\'ying'},sel)}catch(e){sel()}}},key:null}}
+
 /* ---------- router ---------- */
 function route(){stopSession();$('.overlay')?.remove();const hs=location.hash.slice(1);let m;window.scrollTo(0,0);
+ if(AS)return asRoute(hs);
+ if(hs==='teacher')return teacher();
  if(m=hs.match(/^u-(\d+)$/))return unitView(+m[1]);
  if(m=hs.match(/^play-u-(\d+)-([123])$/))return playUnit(+m[1],+m[2]);
  if(m=hs.match(/^boss-(\d+)$/))return bossIntro(+m[1]);

@@ -325,15 +325,126 @@ async function playToEnd(page, wrongFirst = 0) {
   assert.equal(Object.keys(s.days).length, 2, 'yesterday filled');
   assert.match(await page.textContent('.chip.streak'), /2/);
 
+  // Teacher: build an assignment file with only two units, a student plays it, the teacher checks the result code
+  await page.goto(URL + '#teacher');
+  assert.equal(await page.locator('.lp').count(), 14, '14 legs to pick from');
+  await page.check('input[name=u][value="3"]'); await page.check('input[name=u][value="5"]');
+  for (const p of ['r', 's', 'g']) await page.check(`input[name=p][value="${p}"]`);
+  await page.click('[data-act=att][data-v="1"]');
+  await page.fill('#as-title', 'Unit 3 va 5 · uy vazifasi'); await page.fill('#as-due', '2030-01-15'); await page.fill('#as-note', 'Testni oxirida topshiring.');
+  assert.match(await page.textContent('#as-sum'), /2 ta unit · 10 ta vazifa/);
+  const [dl] = await Promise.all([page.waitForEvent('download'), page.click('[data-act=mkfile]')]);
+  assert.match(dl.suggestedFilename(), /^Topshiriq-unit-3-va-5-uy-vazifasi-[a-z2-9]{6}\.html$/);
+  const asFile = path.join(require('os').tmpdir(), dl.suggestedFilename());
+  await dl.saveAs(asFile);
+  const html = require('fs').readFileSync(asFile, 'utf8');
+  const fdata = JSON.parse(html.match(/<script id="a2-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
+  assert.deepEqual(fdata.units.map(u => u.n), [3, 5], 'the file carries only the chosen units');
+  assert.equal(fdata.scenes.filter(Boolean).length, 2, 'scenes of the two legs only');
+  s = await state(page);
+  const made = Object.values(s.assigns)[0];
+  assert.ok(made && made.secret && made.att === 1, 'assignment kept for checking');
+  assert.equal(await page.locator('.as-list li').count(), 1);
+
+  const st = await ctx.newPage();
+  st.on('pageerror', e => errors.push(e.message));
+  const SURL = 'file://' + asFile;
+  await st.goto(SURL + '#u-3');
+  assert.match(await st.textContent('.as-head h1'), /Unit 3 va 5/);
+  assert.ok(await st.locator('#name-f').count(), 'a name comes first');
+  await st.fill('#as-name', 'Aliyeva Malika'); await st.click('#name-f button');
+  assert.equal(await st.locator('.trow').count(), 10, '2 units x (2 levels + test) + review + 2 scenes + games');
+  for (const hash of ['#u-1', '#print-u-3', '#play-u-3-3', '#daily', '#teacher', '#me', '#boss-0', '#exam-1']) {
+    await st.goto(SURL + hash);
+    assert.ok(await st.locator('.as-head').count(), hash + ' is not part of the assignment');
+  }
+  await st.goto(SURL + '#u-3');
+  assert.equal(await st.locator('.level').count(), 2, 'only the chosen levels');
+  assert.equal(await st.locator('a[href^="#print"]').count(), 0, 'no answer keys in a student file');
+  await st.goto(SURL + '#play-u-3-1');
+  await playToEnd(st);
+  assert.equal((await state(st)).lv['3-1'], 100);
+  await st.goto(SURL + '#test-u-5');
+  assert.match(await st.textContent('.intro'), /Urinishlar: 1 \/ 1/);
+  await st.click('[data-act=start]');
+  for (let i = 0; i < 20; i++) await answer(st, i < 12);
+  await st.waitForSelector('.result');
+  let ss = await state(st);
+  assert.equal(ss.tries[5], 1); assert.equal(ss.tests[5], 60); assert.equal(ss.firstT[5], 60);
+  assert.equal(await st.locator('[data-act=again]').count(), 0, 'no attempts left');
+  assert.doesNotMatch(await st.textContent('.answers'), /urinishlar tugagach/, 'answers shown once attempts are used up');
+  await st.goto(SURL); await st.goto(SURL + '#test-u-5');
+  assert.ok(await st.locator('[data-act=start]').isDisabled(), 'no second attempt');
+  assert.match(await st.textContent('[data-act=start]'), /Urinishlar tugadi/);
+  await st.goto(SURL + '#review');
+  await st.click('[data-act=start]');
+  await playToEnd(st);
+  assert.ok((await state(st)).rev > 0, 'review battle recorded');
+  await st.goto(SURL);
+  const report = await st.inputValue('.send .share-box');
+  assert.match(report, /O'quvchi: Aliyeva Malika/);
+  assert.match(report, /✓ Unit 3 · 1-daraja: 100%/);
+  assert.match(report, /✓ Unit 5 testi: 60% \(baho 3\) · 1 urinish/);
+  assert.match(report, /✗ Unit 5 · 2-daraja: bajarilmagan/);
+  assert.match(report, /Bajarildi: 3\/10 · o'rtacha \d+%/);
+  assert.match(report, /Kod: [0-9A-Z]{7}-[0-9A-Z]{7}$/);
+
+  // the same file with a limit of 2 attempts hides the right answers while one is left
+  await page.goto(URL + '#teacher');
+  await page.check('input[name=u][value="7"]');
+  await page.click('[data-act=att][data-v="2"]');
+  const [dl2] = await Promise.all([page.waitForEvent('download'), page.click('[data-act=mkfile]')]);
+  const asFile2 = path.join(require('os').tmpdir(), dl2.suggestedFilename()); await dl2.saveAs(asFile2);
+  await st.goto('file://' + asFile2);
+  await st.fill('#as-name', 'Karimov Jasur'); await st.press('#as-name', 'Enter');
+  await st.goto('file://' + asFile2 + '#test-u-7'); await st.click('[data-act=start]');
+  for (let i = 0; i < 20; i++) await answer(st, i % 2 === 0);
+  await st.waitForSelector('.result');
+  assert.match(await st.textContent('.answers'), /urinishlar tugagach/, 'right answers hidden while an attempt is left');
+  assert.match(await st.textContent('[data-act=again]'), /1 ta qoldi/);
+  await st.goto('file://' + asFile2);
+  const report2 = await st.inputValue('.send .share-box');
+
+  // teacher checks: real, edited and unknown results in one paste, plus a table for Excel
+  await page.goto(URL + '#teacher');
+  const forged = report.replace('60% (baho 3)', '95% (baho 5)');
+  const alien = report.replace(/ID [a-z2-9]+/, 'ID zzzzzz');
+  await page.fill('#as-res', `Malika, [29.09.2026]:\n${report}\n\n${report2}\n${forged}\n${alien}`);
+  await page.click('[data-act=verify]');
+  assert.equal(await page.locator('.vst.ok').count(), 2, 'untouched results pass');
+  assert.equal(await page.locator('.vst.bad').count(), 1, 'an edited score is caught');
+  assert.equal(await page.locator('.vst.unk').count(), 1, 'an unknown assignment is flagged');
+  await page.click('[data-act=tsv]');
+  assert.match(await page.inputValue('#tsv'), /Aliyeva Malika\tUnit 3 va 5/);
+
+  // preview in the teacher's own tab, then back
+  await page.goto(URL + '#teacher');
+  await page.check('input[name=u][value="1"]');
+  await page.click('[data-act=preview]');
+  await page.waitForSelector('.banner.pv');
+  await page.fill('#as-name', 'Test'); await page.press('#as-name', 'Enter');
+  assert.equal(await page.locator('.trow').count(), 3);
+  await page.click('[data-act=endpv]');
+  await page.waitForSelector('.teacher');
+  assert.equal(await page.locator('.as-list li').count(), 2, 'preview does not create an assignment');
+  await page.click('[data-act=del]'); await page.click('[data-act=del]');
+  assert.equal(await page.locator('.as-list li').count(), 1, 'delete asks twice');
+
   // Phone width: no sideways scrolling on any screen
   const phone = await ctx.newPage();
   phone.on('pageerror', e => errors.push(e.message));
   await phone.setViewportSize({ width: 360, height: 740 });
-  for (const hash of ['', '#u-16', '#u-3', '#play-u-16-3', '#play-u-3-1', '#boss-4', '#blitz', '#daily', '#mistakes', '#me', '#exam-2', '#test-u-7', '#print-u-12', '#print-p-1', '#scene-5', '#play-u-9-3', '#games', '#g-memory', '#g-scramble', '#g-hidden']) {
+  for (const hash of ['', '#u-16', '#u-3', '#play-u-16-3', '#play-u-3-1', '#boss-4', '#blitz', '#daily', '#mistakes', '#me', '#exam-2', '#test-u-7', '#print-u-12', '#print-p-1', '#scene-5', '#play-u-9-3', '#games', '#g-memory', '#g-scramble', '#g-hidden', '#teacher']) {
     await phone.goto(URL + hash);
     await phone.waitForTimeout(100);
     const [sw, w] = await phone.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
     assert.ok(sw <= w, `${hash || 'home'} scrolls sideways on a phone (${sw} > ${w})`);
+  }
+  for (const hash of ['', '#u-3', '#test-u-5', '#review', '#games', '#scene-1']) {
+    await phone.goto(SURL + hash);
+    await phone.waitForTimeout(100);
+    const [sw, w] = await phone.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
+    assert.ok(sw <= w, `assignment ${hash || 'home'} scrolls sideways on a phone (${sw} > ${w})`);
   }
   assert.deepEqual(errors, [], 'no page errors');
   await browser.close();
