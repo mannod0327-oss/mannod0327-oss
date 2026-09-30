@@ -34,7 +34,7 @@ Sana: 2026-09-29 · Spec: `specs/rc3-content-audit.md`
 | REQ-11 | Jadvaldan matnga ko'chirish (7 unit) + ibora gaplari (60) | ✅ faktlar kitob jadvali bilan mos |
 | REQ-12 | Namuna javoblar ↔ kalit | ✅ kalitdagi 7 ta xato tuzatib ko'rsatildi (quyida) |
 | REQ-13 | PDF'dan ajratishdagi izlar, imlo | ✅ 5 ta chiziqcha bo'linishi va 1 ta dialog nomi tuzatildi |
-| REQ-14 | e2e brauzer testi | ✅ 20/20, objective 100% |
+| REQ-14 | e2e brauzer testi | ✅ 20/20, objective 100% (DEMO ham, CONNECTED ham) |
 
 ## Rasmiy kalitdagi xato — sahifa kitobga amal qiladi
 
@@ -88,6 +88,9 @@ O'qituvchi e'tiboriga: kitobning qog'oz kalitidan foydalansangiz, U6 I1–I2 jav
   - U14: "youth-promoting";
   - U18: "gold-plated";
   - U19: "seventy-five".
+- Kitobning o'zidagi matn xatolari (o'qish matnida):
+  - U3: "**ninty**-nine percent" → "ninety-nine percent";
+  - U18: "teams**---**enough" → "teams—enough".
 - U18 Listening dialog nomi "Cup" deb chiqayotgan edi. To'g'risi "A Sure Winner?". Unit nomi kitobda ikki qatorga bo'lingani sabab bo'lgan.
 - True/False listening unitlarida (3, 6, 9, 12, 15, 18) parser savollar o'rniga Summary obyektlarini qo'yib yuborgan edi. Audit buni ushladi va parser tuzatildi. Hozir 18 ta savolning hammasi kitobdagi bilan bir xil.
 
@@ -109,9 +112,31 @@ O'qituvchi e'tiboriga: kitobning qog'oz kalitidan foydalansangiz, U6 I1–I2 jav
 - **Grammar mashqlari tuzilishi.** Har bir unitda 5 ta mashq bor: kitobdan 2 tasi, qo'shimcha 3 tasi. U14 bundan mustasno: kitobning uch qismli mashqi 3 ta alohida savolga bo'lingan, qo'shimcha mashq 2 ta.
 - **Tekshiruv doirasidan tashqarida qolganlar:** o'zbekcha tarjima uslubi, rasm kesimi, audio sifati.
 
-## Keyingi qadam
+## CONNECTED sayt (o'qituvchi paneliga ulangan)
 
-RC3 CONNECTED sayti RC2'dagi kabi quriladi:
-- `turbo-reading-rc3.netlify.app/unit-N`;
-- Supabase savollar banki: 924 qator, `RC3-%`;
-- API va o'qituvchi panelida RC3 bo'limi.
+- **Supabase savollar banki.** `reading_question_bank_v1` jadvaliga `RC3-%` kodli 924 qator qo'shildi, ulardan 766 tasi avtomatik baholanadi.
+  - Qo'shish 4 partiyada bajarildi. Har bir partiyaning md5 xeshi fayl bilan mos:
+
+    | Unitlar | Qatorlar | md5 |
+    |---|---|---|
+    | 1–5 | 234 | `4d714661…` |
+    | 6–10 | 227 | `6c68725a…` |
+    | 11–15 | 229 | `0209947c…` |
+    | 16–20 | 234 | `4d89b51b…` |
+
+  - RC1 va RC2 qatorlari o'zgarmadi (875 + 882).
+- **API.** Yangi `turbo-reading-rc3-api` funksiyasi joylandi. RC1 va RC2 endpointlariga tegilmadi.
+  - Jonli tekshiruvda U1, U6 va U20 savollari to'g'ri qaytdi.
+  - Mavjud bo'lmagan U21 so'ralganda xato qaytaradi.
+- **O'qituvchi paneli.** `turbo-reading-teacher-api` v8 ga yangilandi: katalogda "Reading Challenge 3" va 20 ta unit nomi chiqadi.
+- **Sinovlar:**
+  - CONNECTED sahifalar haqiqiy API kodi orqali (lokal nusxa) 20/20 unitda 100% oldi.
+  - Noto'g'ri javoblar 0% oladi, aralash javoblarda natija kutilganiga teng (22/42).
+  - Qayta topshirish rad etiladi.
+- **Netlify.** `turbo-reading-rc3` loyihasi yaratildi. Kirish sozlamalari RC1/RC2 bilan bir xil: production ochiq, faqat preview uchun login.
+
+## Joylash
+
+1. Ikkala `RC3_SAYT_*.zip` faylini **bitta papkaga** oching. Natijada bitta `turbo-reading-rc3` papkasi hosil bo'lishi kerak: ichida 22 ta fayl (`index.html`, `_headers`, `unit-1…20.html`).
+2. Netlify → Projects → **turbo-reading-rc3** → Deploys bo'limini oching va shu papkani sudrab tashlang.
+3. Tayyor manzillar: `https://turbo-reading-rc3.netlify.app/unit-1` … `/unit-20`.
