@@ -134,6 +134,12 @@ O'qituvchi e'tiboriga: kitobning qog'oz kalitidan foydalansangiz, U6 I1–I2 jav
   - Noto'g'ri javoblar 0% oladi, aralash javoblarda natija kutilganiga teng (22/42).
   - Qayta topshirish rad etiladi.
 - **Netlify.** `turbo-reading-rc3` loyihasi yaratildi. Kirish sozlamalari RC1/RC2 bilan bir xil: production ochiq, faqat preview uchun login.
+- **Jonli sinov (2026-09-30).**
+  - Sayt `turbo-reading-rc3.netlify.app` joylandi: 21 ta sahifa va `_headers` qoidasi. 20 ta unitning hammasi ochiladi.
+  - O'qituvchining U4 bo'yicha sinov topshirig'i bazaga to'liq saqlandi: 47 ta javob va audio yozuv.
+  - Ball qo'lda qayta tekshirildi: 9/40, 22.5%. Har bir javob kalit bilan mos keldi.
+  - Natija o'qituvchi panelida audio havolasi bilan ko'rindi.
+  - Sinov yozuvi (natija, javoblar, sessiya, audio) keyin o'chirildi. RC3 banki 924 qator bo'lib qoldi, RC1/RC2 natijalariga tegilmadi.
 
 ## Joylash
 
