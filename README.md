@@ -32,4 +32,4 @@ For sensitive security reports, use the project's
 
 ---
 
-*Amaliy AI ish jarayonlari: aniq ko'rsatmalar, nazoratli bajarish va tekshirilgan natijalar.*
+_Amaliy AI ish jarayonlari: aniq ko'rsatmalar, nazoratli bajarish va tekshirilgan natijalar._
