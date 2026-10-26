@@ -4,3 +4,11 @@ __pycache__/
 .venv/
 .env
 release/
+
+# Local Claude Code / plugin runtime state (not project content)
+.claude/
+.claude-flow/
+.swarm/
+agentdb.rvf
+agentdb.rvf.idmap.json
+ruvector.db
